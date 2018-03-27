@@ -1,0 +1,103 @@
+// Grid Settings
+
+.lkm-slab {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.content-container {
+  max-width: 1224px;
+  height: auto;
+  margin: 0 auto;
+}
+.lkm-row {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  .lkm-column {
+    float: none;
+    display: block;
+    height: auto;
+  }
+}
+
+
+
+@include min-width(768px) {
+  .content-container {
+    max-width: 1224px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .lkm-row {
+    display: block;
+    height: auto;
+    width: 100%;
+    @include clearfix;
+
+    .lkm-column {
+      float: left;
+      display: block;
+      height: auto;
+    }
+
+    .whole {
+      width: 100%;
+    }
+
+    .one-half {
+      width: 50%;
+    }
+
+    .one-third {
+      width: 33%;
+    }
+
+    .one-third-grid {
+      width: 32%;
+      margin: 0px 2% 24px 0px;
+    }
+
+    .one-third-grid:nth-child(3n) {
+      margin: 0px 0% 24px 0px;
+    }
+
+    .two-thirds {
+      width: 67%;
+    }
+
+    .one-fourth {
+      width: 25%;
+    }
+
+    .three-fourths {
+      width: 75%;
+    }
+
+    .one-fifth {
+      width: 20%;
+    }
+
+    .two-fifth {
+      width: 40%;
+    }
+
+    .three-fifth {
+      width: 60%;
+    }
+
+    .four-fifth {
+      width: 80%;
+    }
+
+    .one-sixth {
+      width: 16.7%;
+    }
+
+    .five-sixth {
+      width: 83.3%;
+    }
+  }
+}

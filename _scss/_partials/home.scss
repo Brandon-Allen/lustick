@@ -1,0 +1,663 @@
+// Home Page CSS
+
+.hero {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+
+  @include min-width(960px) {
+    height: 570px;
+  }
+
+  .hero-container {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 0%;
+    padding-top: 400px;
+    display: block;
+
+    @include min-width(960px) {
+      padding-top: 0px;
+      background-position: 30% 20%;
+    }
+
+    .hero-header {
+      display: block;
+      position: relative;
+      background: $main;
+      text-align: center;
+      width: 100%;
+      max-width: 1224px;
+      height: auto;
+      padding: 20px 20px 20px 20px;
+      margin: 0 auto;
+
+      @include min-width(1224px) {
+        padding: 48px 0px 48px 0px;
+      }
+
+      @include min-width(960px) {
+        margin-top: 0px;
+        background: none;
+      }
+
+      h1 {
+        font-size: 1.75em;
+        line-height: 1.5em;
+        font-weight: 800;
+        color: $white;
+        margin: 0px;
+
+        @include min-width(960px) {
+          text-align: right;
+          font-size: 2.25em;
+          color: $main;
+          margin: 80px 0px 0px 0px;
+          padding-left: 40%;
+        }
+
+        @include min-width(1200px) {
+          font-size: 3.25em;
+        }
+      }
+
+      h3 {
+        font-size: 1.2em;
+        line-height: 1.25em;
+        font-weight: 600;
+        font-style: italic;
+        color: rgba($white, .8);
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+
+        @include min-width(960px) {
+          text-align: right;
+          font-size: 1.3em;
+          color: rgba($dark, .8);
+          display: block;
+          width: 100%;
+          padding-left: 50%;
+        }
+
+        @include min-width(1200px) {
+          font-size: 1.6em;
+        }
+      }
+
+      .button-container {
+        padding-top: 20px;
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+
+        @include min-width(960px) {
+          text-align: right;
+        }
+      }
+
+      a.cta {
+        font-size: 1.25em;
+        color: $white;
+
+        @include min-width(960px) {
+          font-size: 1.3em;
+          display: inline-block;
+          padding: 8px 15px;
+          color: $white;
+          background: $main;
+          @include transition;
+          text-transform: uppercase;
+          margin-top: 10px;
+
+          &:hover {
+            background: saturate($main,50%);
+          }
+        }
+
+        @include min-width(1200px) {
+          font-size: 1.5em;
+        }
+
+        span.icons {
+          display: inline-block;
+          vertical-align: top;
+          position: relative;
+          height: 44px;
+          width: 37px;
+
+          i {
+            position: absolute;
+            display: block;
+          }
+
+          i.fa-circle {
+            font-size: 1.75em;
+            line-height: 1.2em;
+            top: 0px;
+            left: 0;
+            color: rgba($white,.2);
+          }
+
+          i.fa-play {
+            font-size: .8em;
+            line-height: 1.2em;
+            top: 12px;
+            left: 12px;
+
+            @include min-width(1200px) {
+              top: 14px;
+              left: 14px;
+            }
+          }
+        }
+
+        span.text {
+          font-size: .9em;
+          font-weight: 800;
+          display: inline-block;
+          position: relative;
+          line-height: 2.5em;
+          margin-left: 5px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+.team {
+  min-height: 337px;
+  overflow: hidden;
+  position: relative;
+
+  @include min-width(600px) {
+    .one-half {
+      width: 100%;
+      height: 100%;
+      float:none;
+    }
+  }
+
+  @include min-width(900px) {
+    .one-half {
+      width: 50%;
+      float: left;
+    }
+  }
+
+  a {
+    color: $main;
+    font-weight: 800;
+  }
+
+  .team-content {
+    padding: 50px 20px 30px 20px;
+
+    @include min-width(600px) {
+      padding: 50px 48px 30px 48px;
+    }
+  }
+
+  .profile {
+    background: rgba($secondary,.2);
+    position: relative;
+
+    .owl-nav {
+      display: none;
+    }
+
+    .owl-dots {
+      display: block;
+      border: 1px solid red;
+      width: 100%;
+      height: 20px;
+      position: absolute;
+      top: 0px;
+
+      span {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: $main;
+      }
+    }
+
+    #cycle-pager {
+      display: inline-block;
+      width: 50%;
+      position: absolute;
+      left: 50px;
+      bottom: 20px;
+      z-index: 300;
+      cursor: pointer;
+
+      span > div {
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        border: 1px solid $main;
+        background: none;
+        margin-right: 5px;
+        border-radius: 50px;
+      }
+
+      span.cycle-pager-active > div{
+        background: $main;
+      }
+    }
+    @include min-width(1220px) {
+      background: none;
+    }
+
+    .profile-tiles {
+      position: relative;
+      width: 100%;
+      height: auto;
+      display: inline-block;
+    }
+
+    .profile-content {
+      width: 100%;
+      min-height: 337px;
+      padding: 50px 20px 30px 20px;
+      z-index: 20;
+
+      @include min-width(600px) {
+        width: 62%;
+        padding: 50px 48px 30px 48px;
+      }
+
+      h2 {
+        line-height: 1em;
+        margin: 0px 0px .1em 0px;
+      }
+
+      h5 {
+        color: rgba($dark,.9);
+        margin: 0px 0px .5em 0px;
+        font-weight: 700;
+      }
+    }
+
+    .profile-photo {
+      right:0px;
+      bottom: 0px;
+      background: url('_images/portrait-gradient.png') no-repeat;
+      background-position: center top;
+      z-index: 0;
+
+      @include min-width(600px) {
+        position: absolute;
+        width: 415px;
+        background-position: right top;
+        text-align: right;
+      }
+
+      img {
+        display: inline-block;
+        vertical-align: bottom;
+      }
+    }
+  }
+
+  .bgcolor-slab {
+    display: none;
+
+    @include min-width(1220px) {
+      display: block;
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background:rgba($secondary, .2);
+    }
+  }
+}
+
+.practice {
+  position: relative;
+  background:$main;
+
+  h2 {
+    font-size: 2em;
+    line-height: 1em;
+    font-weight: 700;
+    text-align: center;
+    color: $white;
+    padding: 30px 0px 10px 0px;
+  }
+
+  .owl-carousel {
+    position: relative;
+
+    .owl-nav {
+      position: absolute;
+      top: 150px;
+      width: 100%;
+
+      .owl-prev, .owl-next {
+        width: 30px;
+        height: auto;
+        font-size: 1em;
+        color: $main;
+        background: $white;
+        line-height: 3em;
+      }
+      .owl-next{
+        float: right;
+        border-top-left-radius: 100px;
+        border-bottom-left-radius: 100px;
+        text-align: right;
+        padding-right: 5px;
+      }
+
+      .owl-prev {
+        float: left;
+        border-top-right-radius: 100px;
+        border-bottom-right-radius: 100px;
+        padding-left: 5px;
+      }
+    }
+
+    .item {
+      min-height: 350px;
+      padding: 30px;
+
+      .owl-container {
+        display: block;
+        background: rgba($dark,.1);
+        width: 100%;
+        height: 100%;
+        min-height: 320px;
+        padding: 30px;
+        text-align: center;
+        position: relative;
+
+        .icon-container {
+          width: 100px;
+          height: 100px;
+          border-radius: 100px;
+          margin: 0 auto;
+          margin-top: 20px;
+          margin-bottom: 35px;
+        }
+
+        h3 {
+          color: $white;
+          font-size: 1.375em;
+          line-height: 1.1em;
+          text-transform: uppercase;
+        }
+
+        a {
+          color: $white;
+          size: .9em;
+          font-weight: 700;
+          text-align: center;
+          background: $secondary;
+          display: block;
+          width: 70%;
+          position: absolute;
+          bottom: 30px;
+          right: 15%;
+          left: 15%;
+          padding: 8px 30px;
+        }
+      }
+    }
+  }
+}
+
+.quote {
+  padding: 30px 30px 50px 30px;
+  height: auto;
+  background: lighten($secondary, 45%);
+  text-align: center;
+
+  .quote-container {
+    display: block;
+    padding: 50px 0px 20px 0px;
+
+    i {
+      background: lighten($secondary, 45%);
+      padding: 0px 50px;
+      font-size: 2em;
+      margin-top: -70px;
+      color: $main;
+    }
+
+    span {
+      display: block;
+      width: 70%;
+      height: 2px;
+      background: rgba($secondary, .6);
+      margin: 0 auto;
+
+      @include min-width(768px) {
+        width: 40%;
+      }
+    }
+  }
+
+  .quote-content {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  quote {
+    display: block;
+    width: 100%;
+    max-width: 1224px;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0 auto;
+    font-size: 1.25em;
+    line-height: 1.5em;
+    text-align: center;
+
+    @include min-width(768px) {
+      width: 80%;
+      font-size: 1.5em;
+    }
+
+    @include min-width(1224px) {
+      width: 80%;
+      font-size: 1.8em;
+    }
+  }
+
+  h5 {
+    font-size: 1.125em;
+    line-height: 1.5em;
+    font-weight: 800;
+    color: $main;
+    display: block;
+    margin-top: 10px;
+  }
+
+  p {
+    font-size: .875em;
+    line-height: 1.5em;
+  }
+}
+
+.consultation-form {
+  height: auto;
+  min-height: 320px;
+  padding: 40px 20px;
+
+  @include min-width(768px) {
+    padding: 65px 20px;
+  }
+
+  @include min-width(1224px) {
+    padding: 65px 0px;
+  }
+
+  .consultation-content {
+    padding: 0px;
+
+    @include min-width(768px) {
+      padding: 0px 80px 0px 0px;
+    }
+  }
+
+  p.number {
+    font-size: 1.6em;
+    color: $secondary;
+
+    phone {
+      display: block;
+      font-weight: 800;
+      color: $main;
+      margin-left: 0px;
+
+      @include min-width(1036px) {
+        display: inline-block;
+        margin-left: 5px;
+      }
+    }
+  }
+
+  p {
+    font-size: .9375em;
+    line-height: 1.5em;
+
+    span {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.form-container {
+  padding: 0px 0px 0px 0px;
+
+  .gform_wrapper {
+    padding: 0;
+    margin: 0;
+
+    form .gform_body ul.gform_fields {
+
+      li.gfield {
+        float: left;
+        @include clearfix;
+        clear: none;
+        padding-right: 0;
+        margin-top: 0;
+
+        .gfield_label {
+          display: none;
+          width: 100%;
+        }
+
+        input, textarea {
+          border: none;
+          background: rgba($secondary,.1);
+          display: block;
+          width: 100%;
+          padding: 7px !important;
+          margin-bottom: 5px;
+        }
+
+        textarea {
+          height: 70px;
+          width: 100%;
+          margin-bottom: 13px;
+
+          @include min-width(768px) {
+            height: 70px;
+            width: 80%;
+          }
+        }
+      }
+
+      li#field_1_1 {
+        width: 100%;
+        display: block;
+      }
+
+      li#field_1_2 {
+        width: 50%;
+        display: block;
+      }
+
+      li#field_1_3 {
+        width: 50%;
+        display: block;
+        padding-left: 2%;
+        padding-right: 0;
+      }
+
+      li#field_1_4 {
+        width: 100%;
+        display: block;
+      }
+    }
+
+    form .gform_footer {
+      float: right;
+      @include clearfix;
+      width: 100%;
+      margin-top: 0px;
+      padding: 0px;
+
+      input[type='submit'] {
+        background: $main;
+        width: 100%;
+        height: 70px;
+        border: 0;
+        color: $white;
+        font-weight: 800;
+        font-size: 18px;
+        text-transform: uppercase;
+        margin: 0px;
+        -webkit-appearance: none;
+        border-radius: 0;
+      }
+
+      @include min-width(768px) {
+        width: 18%;
+        margin-top: -83px;
+        padding: 0px;
+      }
+    }
+  }
+}
+
+.form-container.sub-footer-form {
+  padding: 60px 0px 60px 80px;
+
+  input[type="text"], textarea {
+    background: $white!important;
+  }
+}
+
+.logos {
+  display: none;
+  background: rgba($secondary, .4);
+
+  .logo-container {
+    display: inline-block;
+    padding: 65px;
+    text-align: center;
+
+    img {
+      display: inline-block;
+      vertical-align: middle;
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  @include min-width(768px) {
+    display: block;
+  }
+}

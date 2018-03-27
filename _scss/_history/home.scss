@@ -1,0 +1,556 @@
+// Home Page CSS
+
+.hero {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  background: url('_images/hero-sample.jpg') no-repeat;
+  background-size: cover;
+  background-position: 20% 0%;
+
+  @include min-width(768px) {
+    min-height: 570px;
+    background-position: left top;
+  }
+
+  .hero-container {
+    width: 100%;
+    height: auto;
+    padding-top: 400px;
+    margin: 0 auto;
+
+    @include min-width(1200px) {
+      width: 100%;
+      max-width: 1224px;
+      margin: 0 auto;
+      padding-top: 0px;
+    }
+
+    .hero-header {
+      display: block;
+      background: $main;
+      float: none;
+      text-align: center;
+      width: 100%;
+      padding: 40px 30px 30px 30px;
+
+      @include min-width(1200px) {
+        background: none;
+        float: left;
+        @include clearfix;
+        text-align: right;
+        width: 100%;
+        display: block;
+      }
+
+      h1 {
+        font-size: 2.25em;
+        line-height: 1.5em;
+        font-weight: 800;
+        color: $white;
+        margin: 0px;
+
+        @include min-width(1200px) {
+          font-size: 3.75em;
+          line-height: 1.5;
+          font-weight: 800;
+          color: $main;
+          margin: 80px 0px 0px 0px;
+        }
+      }
+
+      h3 {
+        font-size: 1.2em;
+        line-height: 1.5;
+        font-weight: 600;
+        font-style: italic;
+        color: rgba($white, .8);
+        display: block;
+        width: 75%;
+        margin: 0 auto;
+        float:none;
+        text-align: center;
+
+        @include min-width(1200px) {
+          font-size: 1.6em;
+          line-height: 1.5;
+          font-weight: 600;
+          font-style: italic;
+          color: rgba($dark, .8);
+          display: block;
+          width: 40%;
+          float:right;
+          text-align: right;
+          @include clearfix;
+        }
+      }
+
+      .button-container {
+        padding-top: 20px;
+        float: none;
+        text-align: center;
+        width: 50%;
+        margin: 0 auto;
+
+        @include min-width(1200px) {
+          display: block;
+          width: 100%;
+          height: auto;
+          padding-top: 60px;
+          float: right;
+          @include clearfix;
+          text-align: right;
+        }
+      }
+
+      a.cta {
+        font-size: 1.25em;
+        color: $white;
+
+        span.icons {
+          display: inline-block;
+          position: relative;
+          height: auto;
+          width: auto;
+          float: none;
+
+          i {
+            position: relative;
+            display: inline-block;
+          }
+
+          i.fa-circle {
+            display: none;
+          }
+
+          i.fa-play {
+            font-size: 1em;
+            line-height: 1.2em;
+            top: 0px;
+            left: 0px;
+          }
+        }
+
+        span.text {
+          position: relative;
+          line-height: 2.1em;
+          float: none;
+          display: inline-block;
+          margin-left: 10px;
+        }
+
+        @include min-width(1200px) {
+          font-size: 1.6em;
+          display: inline-block;
+          padding: 10px 20px;
+          color: $white;
+          background: $main;
+          @include transition;
+          text-transform: uppercase;
+
+          &:hover {
+            background: saturate($main,50%);
+          }
+
+          span.icons {
+            display: block;
+            position: relative;
+            height: 55px;
+            width: 50px;
+            float: left;
+
+            i {
+              position: absolute;
+            }
+
+            i.fa-circle {
+              display: block;
+              font-size: 2em;
+              line-height: 1em;
+              top: 0;
+              left: 0;
+              color: rgba($white,.2);
+            }
+
+            i.fa-play {
+              line-height: 1.2em;
+              top: 12px;
+              left: 17px;
+            }
+          }
+          span.text {
+            display: block;
+            position: relative;
+            line-height: 2.1em;
+            float: left;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.team {
+  overflow: none;
+
+  @include min-width(768px) {
+    border: 1px solid red;
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  p {
+    margin-bottom: 1em;
+
+    span {
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+
+  a {
+    color: $main;
+    font-weight: 800;
+    @include transition;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+
+  .team-content {
+    padding: 50px 30px 30px 30px;
+
+    @include min-width(1224px) {
+      padding: 50px 80px 30px 0px;
+    }
+  }
+
+  .profile {
+    position: relative;
+
+    @include min-width(1100px) {
+      position: relative;
+    }
+
+    .profile-content {
+      position: absolute;
+      width: 62%;
+      padding: 50px 30px 30px 50px;
+      z-index: 20;
+
+      @include min-width(1200px) {
+        position: absolute;
+        width: 62%;
+        padding: 50px 0px 30px 80px;
+        z-index: 20;
+      }
+
+      h2 {
+        line-height: 1em;
+      }
+      h5 {
+        color: rgba($dark,.9);
+        margin: 0px 0px 1em 0px;
+        font-weight: 700;
+      }
+    }
+
+    .profile-photo {
+      width: 415px;
+      height: 100%;
+      min-height: 335px;
+      position: absolute;
+      right: 0;
+      top: 1px;
+      background: url('_images/portrait-gradient.png') no-repeat;
+      background-position: right top;
+      text-align: right;
+
+      img {
+
+      }
+    }
+  }
+
+  .bgcolor-slab {
+    display: none;
+
+    @include min-width(768px) {
+      display: block;
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background:rgba($secondary, .2);
+    }
+  }
+}
+
+.practice {
+  display: none;
+  position: relative;
+  min-height: 430px;
+  background:$main;
+
+  h2 {
+    font-size: 2em;
+    font-weight: 700;
+    text-align: center;
+    color: $white;
+    padding: 30px 0px;
+  }
+
+  .owl-carousel {
+    position: relative;
+
+    .owl-nav {
+      position: absolute;
+      top: 150px;
+      width: 100%;
+
+      .owl-prev, .owl-next {
+        width: 30px;
+        height: auto;
+        font-size: 1em;
+        color: $main;
+        background: $white;
+        line-height: 3em;
+      }
+      .owl-next{
+        float: right;
+        border-top-left-radius: 100px;
+        border-bottom-left-radius: 100px;
+        text-align: right;
+        padding-right: 5px;
+      }
+
+      .owl-prev {
+        float: left;
+        border-top-right-radius: 100px;
+        border-bottom-right-radius: 100px;
+        padding-left: 5px;
+      }
+    }
+
+    .item {
+      min-height: 350px;
+      padding: 30px;
+
+      .owl-container {
+        display: block;
+        background: rgba($dark,.1);
+        width: 100%;
+        height: 100%;
+        min-height: 320px;
+        padding: 30px;
+        text-align: center;
+        position: relative;
+
+        .icon-container {
+          width: 100px;
+          height: 100px;
+          border-radius: 100px;
+          margin: 0 auto;
+          margin-top: 20px;
+          margin-bottom: 35px;
+        }
+
+        h3 {
+          color: $white;
+          font-size: 1.375em;
+          line-height: 1.1em;
+          text-transform: uppercase;
+        }
+
+        a {
+          color: $white;
+          size: .9em;
+          font-weight: 700;
+          text-align: center;
+          background: $secondary;
+          display: block;
+          width: 70%;
+          position: absolute;
+          bottom: 30px;
+          right: 15%;
+          left: 15%;
+          padding: 8px 30px;
+        }
+      }
+    }
+  }
+}
+
+.quote {
+  min-height: 340px;
+  background: lighten($secondary, 45%);
+  text-align: center;
+
+  .quote-container {
+    display: block;
+    padding: 70px 0px 40px 0px;
+
+    i {
+      background: lighten($secondary, 45%);
+      padding: 0px 50px;
+      font-size: 3em;
+      margin-top: -70px;
+      color: $main;
+    }
+
+    span {
+      display: block;
+      width: 40%;
+      height: 1px;
+      background: rgba($secondary, .6);
+      margin: 0 auto;
+    }
+  }
+
+  quote {
+    display: block;
+    width: 50%;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0 auto;
+    font-size: 1.875em;
+    line-height: 1.5em;
+    text-align: center;
+  }
+
+  h5 {
+    font-size: 1.125em;
+    line-height: 1.5em;
+    font-weight: 800;
+    color: $main;
+    display: block;
+    margin-top: 10px;
+  }
+
+  p {
+    font-size: .875em;
+    line-height: 1.5em;
+  }
+}
+
+.consulation-form {
+  min-height: 320px;
+  padding: 65px 0px;
+
+  .consultation-content {
+    padding: 0px 80px 0px 0px;
+  }
+
+  .form-container {
+    padding: 0px 0px 0px 00px;
+
+    .gform_wrapper {
+      padding: 0;
+      margin: 0;
+
+      form .gform_body ul.gform_fields {
+
+        li.gfield {
+          float: left;
+          @include clearfix;
+          clear: none;
+          padding-right: 0;
+          margin-top: 0;
+
+          .gfield_label {
+            display: none;
+            width: 100%;
+          }
+
+          input, textarea {
+            border: none;
+            background: rgba($secondary,.1);
+            display: block;
+            width: 100%;
+            padding: 7px !important;
+            margin-bottom: 5px;
+          }
+
+          textarea {
+            height: 70px;
+            width: 80%;
+          }
+        }
+
+        li#field_1_1 {
+          width: 100%;
+          display: block;
+        }
+
+        li#field_1_2 {
+          width: 50%;
+          display: block;
+        }
+
+        li#field_1_3 {
+          width: 50%;
+          display: block;
+          padding-left: 2%;
+          padding-right: 0;
+        }
+
+        li#field_1_4 {
+          width: 100%;
+          display: block;
+        }
+      }
+
+      form .gform_footer {
+        float: right;
+        @include clearfix;
+        width: 18%;
+        margin-top: -75px;
+        padding: 0px;
+
+        input[type='submit'] {
+          background: $main;
+          width: 100%;
+          height: 70px;
+          border: 0;
+          color: $white;
+          font-weight: 800;
+          font-size: 18px;
+          text-transform: uppercase;
+          margin: 0px;
+        }
+      }
+    }
+  }
+
+  p.number {
+    font-size: 1.6em;
+    color: $secondary;
+
+    phone {
+      font-weight: 800;
+      color: $main;
+      margin-left: 10px;
+    }
+  }
+
+  p {
+    font-size: .9375em;
+    line-height: 1.5em;
+
+    span {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.logos {
+  padding: 65px 0px;
+  background: rgba($secondary, .4);
+}

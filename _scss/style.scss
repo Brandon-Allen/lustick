@@ -1,0 +1,26 @@
+/*
+Theme Name: Lustick Kaiman & Madrone
+Theme URI: https://github.com/tidythemes/blankslate
+Author: BigFresh
+Author URI: http://bigfresh.com/
+
+
+BlankSlate WordPress Theme © 2011-2017 TidyThemes
+BlankSlate is distributed under the terms of the GNU GPL
+*/
+
+@import '_vendors/reset.scss';
+@import "bourbon";
+@import "neat";
+
+@import '_partials/variables.scss';
+@import '_partials/mixins.scss';
+@import '_partials/grid.scss';
+@import '_partials/settings.scss';
+
+@import '_partials/header.scss';
+@import '_partials/home.scss';
+@import "_partials/footer.scss";
+@import "_partials/team.scss";
+@import "_partials/practice-resource-lp.scss";
+@import "_partials/practice.scss";

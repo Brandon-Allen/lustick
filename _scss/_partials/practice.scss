@@ -1,0 +1,153 @@
+// Practice Single CSS
+
+.practice-header {
+  background: rgba($secondary,.2);
+
+  .practice-hero-content {
+    padding: 35px 50px 0px 0px;
+
+    h1 {
+      font-size: 2.25em;
+      line-height: 1em;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 1.06em;
+      line-height: 1.5em;
+      text-transform: uppercase;
+      color: rgba($dark,.8);
+      margin-bottom: 5px;
+    }
+
+    a.attorney-link {
+      display: block;
+      @include transition;
+
+      &:hover {
+        background: rgba($secondary,.15);
+      }
+    }
+
+    .attorney-container {
+      display: block;
+      width: 100%;
+      height: 85px;
+      background: rgba($secondary,.15);
+      margin-bottom: 15px;
+
+      .name-container {
+        float: left;
+        display: block;
+        padding: 16px 20px;
+      }
+
+      h4 {
+        display: block;
+        line-height: 1.25em;
+      }
+
+      .image-container {
+        width: 30%;
+        height: 100%;
+        overflow: hidden;
+
+        img {
+          display: block;
+          width: auto;
+          height: 125%;
+          margin-left: -30%;
+        }
+      }
+    }
+  }
+
+  .practice-hero {
+    display: block;
+
+    .embed-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      padding-top: 0px;
+      height: 0;
+    }
+
+    .embed-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.practice-area-content {
+  padding: 0px 0px 0px 0px;
+
+  .practice-content-lists {
+    display: block;
+    border-right: 1px solid rgba($dark,.2);
+    padding: 50px 0px 75px 0px;
+
+    .single-list {
+      padding: 0px 80px 25px 0px;
+      position: relative;
+
+      a.see-more {
+        font-size: 1em;
+        line-height: 1.5em;
+      }
+
+      h4{
+        display: block;
+        width: 100%;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+
+        i {
+          display: inline-block;
+          margin-right: 10px;
+        }
+
+        i.fa-newspaper {
+          padding-top: 50px;
+        }
+      }
+
+      h5 {
+        color: $secondary;
+        font-weight: 700;
+      }
+
+      p {
+        font-size: .875em;
+        line-height: 1.25em;
+        margin-bottom: 5px;
+      }
+
+      a {
+        display: block;
+        font-size: .75em;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+
+        i {
+          display: inline-block;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  .practice-main-content {
+    padding: 50px 0px 75px 80px;
+  }
+}

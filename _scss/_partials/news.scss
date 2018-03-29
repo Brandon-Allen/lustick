@@ -1,0 +1,66 @@
+// In the News CSS
+
+.news {
+  margin-bottom: 70px;
+
+  h1, h2 {
+    color: $white;
+    line-height: 1em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+    line-height: 1.5em;
+  }
+
+  h2 {
+    font-weight:  400;
+    padding: 50px 0px 0px 0px;
+  }
+
+  h1 {
+    padding: 0px 0px 50px 0px;
+  }
+}
+
+.news-landing {
+  margin: 0px 0px 85px 0px;
+  padding: 0px 0px 0px 85px;
+
+  .intro-container {
+    border-bottom: 1px solid rgba($dark, .2);
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+  }
+
+  .article-container {
+    padding-top: 25px;
+  }
+
+  .news-feature-img {
+    padding-right: 25px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .news-content-container {
+    padding-left: 25px;
+
+    h3 {
+      font-size: 1.25em;
+    }
+
+    h5{
+      color: $secondary;
+      font-weight: 700;
+    }
+
+    p {
+      color: rgba($dark,.8);
+    }
+  }
+}

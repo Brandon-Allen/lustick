@@ -120,7 +120,7 @@
     </div>
   </div>
 
-  <<div class="lkm-slab sub-quote-form">
+  <div class="lkm-slab sub-quote-form">
     <div class="content-container lkm-row">
       <div class="lkm-column one-third single-quote">
       <?php if(get_field('footer_quote')):?>
@@ -140,7 +140,7 @@
           <?php endwhile; ?>
         <?php endif; ?>
       <?php else: ?>
-        <div class="podcast-container">
+        <div class="podcast-footer-container">
           <div class="icon-container">
             <img src="<?php bloginfo('template_directory'); ?>/_images/icon-podcast.svg" alt="Podcast Icon">
           </div>

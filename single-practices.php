@@ -66,11 +66,11 @@
             <?php while(have_rows('charges_list')): the_row();
                 $charge = get_sub_field('charges_title');
                 $excerpt = get_sub_field('charge_excerpt');
-                $link = get_sub_field('charge_article_link');
+                // $link = get_sub_field('charge_article_link');
             ?>
             <h5><?php echo $charge ?></h5>
             <p><?php echo $excerpt ?></p>
-            <a href="<?php echo $link ?>">Read More<i class="far fa-chevron-right"></i></a>
+            <!-- <a href="">Read More<i class="far fa-chevron-right"></i></a> -->
           <?php endwhile; ?>
         <?php endif; ?>
         <a class="see-more"  href="#" alt="">SEE MORE +</a>

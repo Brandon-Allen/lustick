@@ -44,8 +44,12 @@
   <div class="lkm-slab">
     <div class="content-container lkm-row">
       <div class="lkm-column one-fourth">
-
-        <?php get_template_part( '_includes/sidemenu-education'); ?>
+        <?php if(get_field('resource_type') == 'Past Case') {
+          get_template_part( '_includes/sidemenu-past-cases');
+        } else {
+          get_template_part( '_includes/sidemenu-education');
+        }
+        ?>
 
       </div>
       <div class="lkm-column three-fourths">

@@ -10,16 +10,24 @@ get_header(); ?>
 
 <section id="content" role="main">
   <?php if( have_rows('hero_slider') ): ?>
-  <div class="hero">
+  <div class="hero cycle-slideshow"
+    data-cycle-speed="2000"
+    data-cycle-timeout="7000"
+    data-cycle-pager="#cycle-pager"
+    data-cycle-pager-template="<span><div></div></span>"
+    data-cycle-slides="> div.hero-container"
+  >
     <?php while( have_rows('hero_slider') ): the_row();
       //get_class_vars
       $image = get_sub_field('background_image');
       $headline = get_sub_field('headline_copy');
       $subHead = get_sub_field('sub_headline_copy');
-      $button = get_sub_field('link_button')
+      $button = get_sub_field('link_button');
+      $direction = get_sub_field('text_direction');
     ?>
 
-    <div class="hero-container" style="background-image:url('<?php echo $image['url']; ?>');">
+    <div class="hero-container <?php echo $direction ?>" style="background-image:url('<?php echo $image['url']; ?>');">
+      <div id="cycle-pager"></div>
       <div class="hero-header">
         <h1><?php echo $headline; ?></h2>
         <h3><?php echo $subHead; ?></h3>
@@ -47,9 +55,9 @@ get_header(); ?>
     <div class="bgcolor-slab"></div>
     <div class="content-container lkm-row">
       <div class="lkm-column one-half team-content">
-        <h2>A Team That Understands.</h2>
-        <p><span>YOUR PROBLEMS ARE OUR PROBLEMS.</span> We bring our team of solutions to your problems. The legal experts Lustick, Kaiman, & Madrone bring over 40 years of experiences from both sides of the systems. As former prosecutors, we build your defense with the distinct strategic advantage, anticipating arguments at every step.We are a Bellingham based Criminal Defense, DUI, Traffic, Gun Rights, Military & Aviation Law Attorneys practicing in Whatcom, Skagit, and San Juan counties, as well as the Federal and Military court systems.</p>
-        <a href="">READ MORE +</a>
+        <h2><?php the_field('team_title'); ?></h2>
+        <p><?php the_field('team_summary'); ?></p>
+        <a href="/team/">VIEW THE TEAM +</a>
       </div>
       <div class="lkm-column one-half profile cycle-slideshow"
         data-cycle-timeout="0"

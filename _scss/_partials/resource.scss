@@ -22,3 +22,27 @@
     font-weight: 400;
   }
 }
+
+.additional-resource-header {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: $main;
+  margin-bottom: 70px;
+  background-size: cover;
+
+  h1 {
+    color: $white;
+    font-size: 3.43em;
+    line-height: 1em;
+    padding: 60px 0px 60px 0px;
+  }
+
+  h4 {
+    font-size: 1em;
+    color: $white;
+    text-transform: uppercase;
+    padding: 60px 0px 0px 0px;
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,72 @@
+// Podcast CSS
+.podcast-content {
+  padding: 0px 0px 85px 0px;
+}
+
+.add-resource-content {
+  padding: 0px 0px 85px 85px;
+}
+
+.podcast-intro {
+  margin-bottom: 85px;
+
+  h2 {
+    font-size: 2em;
+    line-height: 1em;
+    margin-bottom:  5px;
+  }
+  h5 {
+    color: $secondary;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+}
+
+.podcast-container {
+  display: block;
+  width: 100%;
+  background: rgba($secondary,.1);
+  margin-bottom:  30px;
+  position: relative;
+
+  h3 {
+    font-size: 1.3em;
+  }
+
+  span.transcript-button {
+    position: absolute;
+    right: 30px;
+    top: 25px;
+    cursor: pointer;
+
+    i {
+      font-size: 1.25em;
+      color: $main;
+    }
+  }
+
+  .podcast-info-container {
+    padding:20px 30px 5px 30px;
+
+    .transcript-container {
+      display: block;
+      width: 100%;
+      height: 0;
+      overflow: auto;
+      @include transition;
+    }
+    .open-transcript {
+      height: 300px;
+    }
+  }
+
+  .podcast-controller-container {
+    padding: 10px 10px 20px 10px;
+
+    audio {
+      display: block;
+      width: 100%;
+      height: audio;
+    }
+  }
+}

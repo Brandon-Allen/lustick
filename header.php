@@ -14,7 +14,7 @@
   <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body id="page-<?php echo lustick_slug(); ?>" <?php body_class(); ?>>
   <div id="wrapper" class="hfeed">
     <header id="header" role="banner">
 

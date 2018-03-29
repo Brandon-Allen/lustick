@@ -40,27 +40,19 @@
       </div>
 
       <div class="lkm-column two-thirds practice-hero">
-        <?php
-          // check if the flexible content field has rows of data
-          if( have_rows('flexible_hero_content') ):
-               // loop through the rows of data
-              while ( have_rows('flexible_hero_content') ) : the_row();
-                  if( get_row_layout() == 'image' ):
-                  	$image = get_sub_field('practice_hero_image');
-                  ?>
-                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-                <?php
-                  elseif( get_row_layout() == 'video' ):
-                  	$video = get_sub_field('video_link');
-                  ?>
-                    <div class="embed-container"><?php echo $video ?></div>
-                  <?php
-                  endif;
-              endwhile;
-          else :
-              // no layouts found
-          endif;
-        ?>
+        <?php if(get_field('hero_type') == 'image'): ?>
+          <?php if(get_field('hero_image')):
+              $image = get_field('hero_image');
+          ?>
+              <img src="<?php echo $image['url'];  ?>" alt="<?php echo $image['alt']; ?>">
+            <?php endif; ?>
+          <?php else: ?>
+            <?php if(get_field('hero_video')): ?>
+              <div class="embed-container">
+                <?php the_field('hero_video'); ?>
+              </div>
+            <?php endif; ?>
+        <?php endif; ?>
       </div>
     </div>
   </div>

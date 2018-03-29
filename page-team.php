@@ -30,14 +30,8 @@
       'post_type' => 'team-member',
       'post_per_page' => -1,
       'order_by' => 'menu_order',
-      'order' =>  'ASC'
-      // 'tax_query' => array(
-    	// 	array(
-    	// 		'taxonomy' => 'team_member_category',
-    	// 		'field'    => 'slug',
-    	// 		'terms'    => 'attorney',
-    	// 	),
-    	// ),
+      'order' =>  'ASC',
+      'category_name' => 'attorney'
     );
     $the_query = new WP_Query( $args );
 
@@ -73,72 +67,47 @@
   }
   ?>
 
-<div class="lkm-slab">
-  <div class="profile-title">
-    <h2>ATTORNEYS</h2>
-    <span></span>
-  </div>
-  <div class="content-container lkm-row profile-grid">
-    <div class="lkm-column one-third-grid profile-container">
-      <a href="">
-      <img src="<?php bloginfo('template_directory') ?>/_images/img-portrait-lawyer.jpg" alt="">
-      <div class="profile-content-container">
-        <h3>Jeff Lustick</h3>
-        <p>Founding Partner</p>
-        <p>Emeritus Senior Manager</p>
-      </div>
-      </a>
-    </div>
+  <?php
+    $args = array(
+      'post_type' => 'team-member',
+      'post_per_page' => -1,
+      'order_by' => 'menu_order',
+      'order' =>  'ASC',
+      'category_name' => 'paralegal'
+    );
+    $the_query = new WP_Query( $args );
 
-    <div class="lkm-column one-third-grid profile-container">
-      <a href="">
-      <img src="<?php bloginfo('template_directory') ?>/_images/img-portrait-lawyer.jpg" alt="">
-      <div class="profile-content-container">
-        <h3>Mark Kaiman</h3>
-        <p>Senior Partner</p>
+    if ( $the_query->have_posts() ) {
+    ?>
+  	<div class="lkm-slab">
+      <div class="profile-title">
+        <h2>PARALEGAL & ADMINISTRATION</h2>
+        <span></span>
       </div>
-      </a>
-    </div>
-
-    <div class="lkm-column one-third-grid profile-container">
-      <a href="">
-      <img src="<?php bloginfo('template_directory') ?>/_images/img-portrait-lawyer.jpg" alt="">
-      <div class="profile-content-container">
-        <h3>Adrian Madrone</h3>
-        <p>Partner</p>
+      <div class="content-container lkm-row profile-grid">
+    <?php
+  	while ( $the_query->have_posts() ) {
+  		$the_query->the_post();
+      ?>
+      <div class="lkm-column one-third-grid profile-container">
+        <a href="<?php echo get_permalink(); ?>">
+        <?php the_post_thumbnail(); ?>
+        <div class="profile-content-container">
+          <h3><?php the_field('team_member_name'); ?></h3>
+          <p><?php the_field('title'); ?></p>
+        </div>
+        </a>
       </div>
-      </a>
+      <?php
+  	}
+    ?>
     </div>
-  </div>
-</div>
-
-<div class="lkm-slab">
-  <div class="profile-title-2">
-    <h2>PARALEGAL & ADMINISTRATION</h2>
-    <span></span>
-  </div>
-  <div class="content-container lkm-row profile-grid">
-    <div class="lkm-column one-third-grid profile-container">
-      <a href="">
-      <img src="<?php bloginfo('template_directory') ?>/_images/img-portrait-lawyer.jpg" alt="">
-      <div class="profile-content-container">
-        <h3>Jarrett Galante</h3>
-        <p>Paralegal</p>
-      </div>
-      </a>
-    </div>
-
-    <div class="lkm-column one-third-grid profile-container">
-      <a href="">
-      <img src="<?php bloginfo('template_directory') ?>/_images/img-portrait-lawyer.jpg" alt="">
-      <div class="profile-content-container">
-        <h3>Elina Dillard</h3>
-        <p>Paralegal</p>
-      </div>
-      </a>
-    </div>
-  </div>
-</div>
+  	</div>
+    <?php
+  	/* Restore original Post Data */
+  	wp_reset_postdata();
+  }
+  ?>
 
 
 </section>

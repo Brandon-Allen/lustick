@@ -1,4 +1,11 @@
 // Practice & Resource Landing Page
+#page-practice-landing .practice-container {
+    background: $main;
+}
+
+#page-resources .practice-container {
+    background: $secondary;
+}
 
 .landing {
   width: 100%;
@@ -54,7 +61,6 @@
   }
 
   .practice-container {
-    background: $main;
     height: 410px;
     text-align: center;
     @include clearfix;

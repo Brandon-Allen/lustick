@@ -19,7 +19,12 @@
         <div class="lkm-column whole">
           <h1 class="entry-title"><?php the_title(); ?></h1> <span id="editpost"><?php edit_post_link(); ?></span>
           <h2 class="page-headline"><?php echo $headline; ?></h2>
-          <p><?php echo $subhead; ?> <a href="<?php echo $link ?>">LEARN MORE</a></p>
+          <p>
+            <?php echo $subhead; ?>
+            <?php if($link): ?>
+              <a href="<?php echo $link ?>">LEARN MORE</a>
+            <?php endif; ?>
+          </p>
         </div>
       </div>
     </div>
@@ -51,7 +56,7 @@
               <p><?php echo $sub; ?></hp>
             <?php endif; ?>
           </div>
-          <a href="">Learn More</a>
+          <a href="<?php echo $link; ?>">Learn More</a>
         </div>
         <?php endwhile; ?>
       <?php endif; ?>

@@ -43,54 +43,51 @@
       <div class="lkm-column one-third">
         <div class="practice-areas">
           <h4><i class="far fa-gavel"></i>PRACTICE AREAS</h4>
+          <?php if(have_rows('practice_areas')): ?>
           <ul>
-            <li>Aviation Law</li>
-            <li>DUI & DWI Defense</li>
-            <li>Federal Criminal Defense</li>
-            <li>Military Law</li>
-            <li>Misdemeanor and Felony Criminal Defense</li>
-            <li>Probation Violation Defense</li>
-            <li>Post-Conviction</li>
-            <li>Post-Trial Appeals</li>
-            <li>Traffic Law Defense</li>
+            <?php while(have_rows('practice_areas')): the_row();
+              $area = get_sub_field('area');
+            ?>
+            <li><?php echo $area; ?></li>
+          <?php endwhile; ?>
           </ul>
+        <?php endif; ?>
           <span class='line'></span>
         </div>
 
         <div class="education">
           <h4><i class="far fa-graduation-cap"></i>Education</h4>
+          <?php if(have_rows('education')): ?>
           <ul>
+            <?php while(have_rows('education')): the_row();
+                $school = get_sub_field('school');
+                $date = get_sub_field('date_accomplishments');
+            ?>
             <li>
-              Gonzaga University, School of Law
-              <span>Juris Doctor Cum Laude (1997)</span>
+              <?php echo $school; ?>
+              <span><?php echo $date; ?></span>
             </li>
-
-            <li>
-              Western Washington University
-              <span>Bachelor of Arts (1993)</span>
-            </li>
-
-            <li>
-              Skagit Valley College
-              <span>Associate of Arts Degree (1991)</span>
-            </li>
+          <?php endwhile; ?>
           </ul>
+        <?php endif; ?>
           <span class='line'></span>
         </div>
 
         <div class="honors">
+          <?php if(have_rows('honors')): ?>
           <h4><i class="far fa-trophy-alt"></i>Honors</h4>
           <ul>
+            <?php while(have_rows('honors')): the_row();
+                $title = get_sub_field('honor_title');
+                $who = get_sub_field('organization_title');
+            ?>
             <li>
-              Top 100 Trial Lawyers
-              <span>by National Trial Lawyers organization 2012-2016</span>
+              <?php echo $title; ?>
+              <span><?php echo $who; ?></span>
             </li>
-
-            <li>
-              Top 100 DUI Attorneys in Washington
-              <span>National Advocacy for DUI Defense, 2013-2106</span>
-            </li>
+          <?php endwhile; ?>
           </ul>
+        <?php endif; ?>
         </div>
       </div>
 
@@ -99,30 +96,24 @@
           <?php the_field( 'bio' ) ?>
         </div>
 
-        <div class="court-admit">
-          <h4><i class="far fa-university"></i>ADMITTED TO THE FOLLOWING COURTS</h4>
-          <ul>
-            <li>U.S. Supreme Court </li>
-            <li>The Washington State Supreme Court</li>
-            <li>The Washington State Court of Appeals</li>
-            <li>All WA State Superior, District & Municipal Courts</li>
-            <li>U.S. Court of Appeals for the Federal Circuit</li>
-            <li>U.S. Court of Appeals for the Armed Forces</li>
-            <li>U.S. United States Court of Veterans Appeals</li>
-            <li>U.S. Court of Federal Claims</li>
-            <li>U.S. Tax Court</li>
-            <li>U.S. District Court for the District of Nebraska</li>
-            <li>U.S. District Court for the Western District of WA</li>
-            <li>U.S. Air Force Court of Criminal Appeals</li>
-            <li>U.S. Navy and Marine Corps Court of Criminal Appeals</li>
-            <li>Lummi Indian Nation Tribal Court</li>
-            <li>Admitted to practice before the FAA and the NTSB</li>
-          </ul>
-        </div>
+          <?php if(have_rows('courts')): ?>
+            <div class="court-admit">
+            <h4><i class="far fa-university"></i>ADMITTED TO THE FOLLOWING COURTS</h4>
+            <ul>
+            <?php while(have_rows('courts')): the_row();
+              $bobby = get_sub_field('courts_admitted');
+            ?>
+            <li><?php echo $bobby; ?></li>
+            <?php endwhile; ?>
+            </ul>
+          </div>
+          <?php endif; ?>
 
         <div class="areas-interest">
-          <h4><i class="far fa-star"></i>ADMITTED TO THE FOLLOWING COURTS</h4>
-          <p>Jeffrey Lustick shares his passion for aviation on Instagram @hawkpilot9al. He also provides aviation legal consulting for individual pilots, aircraft owners, and to the news media and the aviation industry.</p>
+          <?php if(get_field('areas_of_interest')): ?>
+            <h4><i class="far fa-star"></i>Area of Interests</h4>
+            <?php the_field('areas_of_interest') ?>
+          <?php endif; ?>
         </div>
         <!-- <footer class="footer"><?php get_template_part( 'nav', 'below-single' ); ?></footer> -->
       </div><!-- two-thirds end -->
@@ -132,22 +123,34 @@
   <<div class="lkm-slab sub-quote-form">
     <div class="content-container lkm-row">
       <div class="lkm-column one-third single-quote">
+      <?php if(get_field('footer_quote')):?>
         <div class="quote-header-container">
           <i class="fas fa-quote-left"></i>
             <span></span>
         </div>
-        <?php if(have_rows('footer_quote')): ?>
-          <?php while(have_rows('footer_quote')): the_row();
-              $quote = get_sub_field('quote');
-              $client = get_sub_field('client_name');
-              $type = get_sub_field('client_type_and_location');
-          ?>
-        <quote><i class="fas fa-quote-left"></i><?php echo $quote; ?><i class="fas fa-quote-right"></i></quote>
-        <p class="name"><?php echo $client; ?></p>
-        <p class="type"><?php echo $type; ?></p>
-        <?php endwhile; ?>
+          <?php if(have_rows('footer_quote')): ?>
+            <?php while(have_rows('footer_quote')): the_row();
+                $quote = get_sub_field('quote');
+                $client = get_sub_field('client_name');
+                $type = get_sub_field('client_type_and_location');
+            ?>
+          <quote><i class="fas fa-quote-left"></i><?php echo $quote; ?><i class="fas fa-quote-right"></i></quote>
+          <p class="name"><?php echo $client; ?></p>
+          <p class="type"><?php echo $type; ?></p>
+          <?php endwhile; ?>
+        <?php endif; ?>
+      <?php else: ?>
+        <div class="podcast-container">
+          <div class="icon-container">
+            <img src="<?php bloginfo('template_directory'); ?>/_images/icon-podcast.svg" alt="Podcast Icon">
+          </div>
+          <h5>CHECK OUT OUR POCAST</h5>
+          <h3>JUSTICE ON TRIAL</h3>
+          <a href="/podcasts/">LISTEN NOW</a>
+        </div>
       <?php endif; ?>
       </div>
+
 
       <div class="lkm-column two-thirds form-container sub-footer-form">
         <h3>Free Consultation</h3>

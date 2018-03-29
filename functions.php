@@ -13,7 +13,8 @@ register_nav_menus(array(
   'main-menu' => __( 'Main Menu', 'blankslate' ),
   'footer-menu' => __( 'Footer Menu', 'blankslate' ),
   'team-menu' => __( 'Team Menu', 'blankslate' ),
-  'practice-menu' => __( 'Practice Menu', 'blankslate' )
+  'practice-menu' => __( 'Practice Menu', 'blankslate' ),
+  'resource-menu' => __( 'Resource Menu', 'blankslate' )
 ));
 }
 
@@ -75,7 +76,8 @@ return $count;
 }
 
 // Custom Post Type ATTORNEYS
-// Product Custom Post Type
+// =============== Team Custom Post Type ==================== //
+
 function lkm_team_member() {
     // set up product labels
     $labels = array(
@@ -102,6 +104,7 @@ function lkm_team_member() {
         'rewrite' => array('slug' => 'team-member'),
         'query_var' => true,
         'menu_icon' => 'dashicons-businessman',
+        'taxonomies'  => array( 'category' ),
         'supports' => array(
             'title',
             'editor',
@@ -115,11 +118,11 @@ function lkm_team_member() {
     flush_rewrite_rules();
 
     // register taxonomy
-    register_taxonomy('team_member_category', 'team-member', array('hierarchical' => true, 'label' => 'Category', 'query_var' => true, 'rewrite' => array( 'slug' => 'team-member-taxonomy' )));
+
 }
 add_action( 'init', 'lkm_team_member' );
 
-
+// =============== Practice Area Custom Post Type ==================== //
 
 function lkm_practices_init() {
   $labels = array(
@@ -165,3 +168,61 @@ function lkm_practices_init() {
 }
 
 add_action( 'init', 'lkm_practices_init' );
+
+
+// =============== Team Custom Post Type ==================== //
+
+function lkm_resources() {
+    // set up product labels
+    $labels = array(
+        'name' => 'Resources',
+        'singular_name' => 'Resource',
+        'add_new' => 'Add Resources',
+        'edit_item' => 'Edit Resources',
+        'view_item' => 'View Resources',
+        'search_items' => 'Search Resources',
+        'not_found' =>  'No Resources Found',
+        'not_found_in_trash' => 'No Resources found in Trash',
+        'parent_item_colon' => '',
+        'menu_name' => 'Resources'
+    );
+
+    // register post type
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'show_ui' => true,
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'rewrite' => array('slug' => 'resource'),
+        'query_var' => true,
+        'menu_icon' => 'dashicons-book',
+        'taxonomies'  => array( 'category' ),
+        'supports' => array(
+            'title',
+            'editor',
+            'custom-fields',
+            'revisions',
+            'thumbnail',
+            'page-attributes'
+        )
+    );
+    register_post_type( 'resource', $args );
+    flush_rewrite_rules();
+
+    // register taxonomy
+
+}
+add_action( 'init', 'lkm_resources' );
+
+// Add ID to page using slugID
+
+function lustick_slug($unesc=null) {
+ global $post;
+ if ( isset( $post ) ) {
+   $id = is_front_page() ? 'home' : $post->post_name;
+   if ( $unesc ) $id = str_replace('-', ' ', $id);
+ }
+ return $id;
+}

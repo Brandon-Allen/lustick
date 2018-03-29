@@ -24,7 +24,7 @@
         ?>
         <?php if (isset($menu_item_term) && $menu_item_term == $resource_category): ?>
           <?php if (isset($menu_item_type) && $menu_item_type == $resource_type): ?>
-                <li><a href="<?php the_permalink($resource); ?>" class="lkm-side-menu-heading" title="<?php echo get_the_title($resource); ?>"><?php echo get_the_title($resource); ?></a></li>
+                <li><a href="<?php the_permalink($resource); ?>" class="lkm-side-menu-heading" title="<?php echo $resource_type; ?>"><?php echo $resource_type; ?></a></li>
           <?php endif; ?>
         <?php endif; ?>
       </ul>
@@ -35,6 +35,8 @@
 
 
 <!-- Article Menu -->
+
+
 <?php
     $resource_type = 'Article';
     $resource_list = lkm_filtered_resources($resource_category, $resource_type);
@@ -43,7 +45,7 @@
 
     <ul class="lkm-side-menu">
       <li>
-        <a href="#" class="lkm-side-menu-heading" title="<?php echo $resource_type; ?>"><?php echo $resource_type; ?></a>
+        <a href="#" class="lkm-side-menu-heading" title="Articles">Articles</a>
         <ul>
         <?php
           foreach($resource_list as $resource) :

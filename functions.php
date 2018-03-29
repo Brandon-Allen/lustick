@@ -177,9 +177,9 @@ function lkm_resources() {
     $labels = array(
         'name' => 'Resources',
         'singular_name' => 'Resource',
-        'add_new' => 'Add Resources',
-        'edit_item' => 'Edit Resources',
-        'view_item' => 'View Resources',
+        'add_new' => 'Add Resource',
+        'edit_item' => 'Edit Resource',
+        'view_item' => 'View Resource',
         'search_items' => 'Search Resources',
         'not_found' =>  'No Resources Found',
         'not_found_in_trash' => 'No Resources found in Trash',
@@ -225,4 +225,56 @@ function lustick_slug($unesc=null) {
    if ( $unesc ) $id = str_replace('-', ' ', $id);
  }
  return $id;
+}
+
+function lkm_latest_resource($category=null, $resource_type=null) {
+  wp_reset_postdata();
+  $pt = 'resource';
+  $cat = isset($category) ? $category : array();
+  $rt= isset($resource_type) ? $resource_type : '';
+  $args = array(
+      'post_type' => $pt,
+      'meta_key' => 'resource_type',
+      'meta_value' => $rt,
+      'numberposts' => -1,
+      'orderby' => 'date',
+      'order' => 'DESC',
+  );
+
+  $posts = get_posts($args);
+
+  foreach($posts as $post) {
+      setup_postdata($post);
+
+      if (get_field('resource_category', $post->ID) == $cat) return $post->ID;
+  }
+
+}
+
+function lkm_filtered_resources($category=null, $resource_type=null) {
+  wp_reset_postdata();
+  $pt = 'resource';
+  $cat = isset($category) ? $category : array();
+  $rt= isset($resource_type) ? $resource_type : '';
+
+  $args = array(
+      'post_type' => $pt,
+      'numberposts' => -1,
+      'orderby' => 'date',
+      'order' => 'DESC',
+      'meta_key' => 'resource_type',
+      'meta_value' => $rt,
+  );
+
+  $posts = get_posts($args);
+  $filtered_posts = array();
+
+  foreach($posts as $post) {
+    setup_postdata($post);
+
+    if (get_field('resource_category', $post->ID) == $cat) array_push($filtered_posts, $post->ID);
+  }
+
+  return $filtered_posts;
+
 }

@@ -1,10 +1,18 @@
 // Practice & Resource Landing Page
 #page-practice-landing .practice-container {
     background: $main;
+
+    a {
+      background: $secondary;
+    }
 }
 
 #page-resources .practice-container {
     background: $secondary;
+
+  a {
+      background: $main;
+    }
 }
 
 .landing {
@@ -119,7 +127,6 @@
 
     a {
       margin: 0 auto;
-      background: $secondary;
       color: $white;
       padding: 10px 40px;
       line-height: 1em;

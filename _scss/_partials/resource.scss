@@ -1,0 +1,24 @@
+// Resource CSS
+
+.resource-nav {
+  height: auto;
+
+  .nav-container {
+    min-height: 190px;
+  }
+
+  h1 {
+    color: $white;
+    font-size: 3.43em;
+    line-height: 1em;
+    padding: 0px 0px 40px 0px;
+  }
+
+  h4 {
+    font-size: 1em;
+    color: $white;
+    text-transform: uppercase;
+    padding: 60px 0px 0px 0px;
+    font-weight: 400;
+  }
+}

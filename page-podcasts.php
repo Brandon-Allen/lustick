@@ -21,9 +21,9 @@
 
       <div class="lkm-column three-fourths add-resource-content">
         <div class="podcast-intro">
-          <h2>Justice On Trial</h2>
-          <h5>by Adrian Martinez Madrone</h5>
-          <p><strong>Lorem Ipsum Dolor Sit Amet Conse</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui</p>
+          <h2><?php the_field('page_title'); ?></h2>
+          <h5>by <?php the_field('author'); ?></h5>
+          <?php the_field('intro_body_copy'); ?>
         </div>
 
         <?php if(have_rows('podcasts')): ?>

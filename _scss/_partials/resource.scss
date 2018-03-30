@@ -46,3 +46,31 @@
     font-weight: 400;
   }
 }
+
+.lkm-slab.tabs {
+  background: darken($main, 5%);
+  padding: 15px 0px 0px 0px;
+
+  a.lkm-tab {
+    display: inline-block;
+    vertical-align: bottom;
+    padding: 15px;
+    text-align: center;
+    color: rgba($white, .2);
+    font-size: 1.25em;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.5em;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  a.lkm-tab.lkm-active-tab {
+    background: $white;
+    color: $secondary;
+  }
+}
+
+.resource-content-container {
+  padding: 85px 0px;
+}

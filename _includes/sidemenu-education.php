@@ -45,7 +45,7 @@
 
     <ul class="lkm-side-menu">
       <li>
-        <a href="#" class="lkm-side-menu-heading" title="Articles">Articles</a>
+        <a href="#" class="lkm-side-menu-heading" title="<?php echo $resource_type . 's'; ?>"><?php echo $resource_type . 's'; ?></a>
         <ul>
         <?php
           foreach($resource_list as $resource) :

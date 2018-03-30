@@ -31,12 +31,14 @@
     $pastPost = lkm_latest_resource($resource_category, 'Past Case');
   ?>
 
+  <?php if (isset($edPost) && isset($pastPost)): ?>
   <div class="lkm-slab">
     <div class="content-container lkm-row">
       <a href="<?php echo get_permalink( $edPost ); ?>" class="lkm-column one-half lkm-tab<?php if(get_field('resource_type') != 'Past Case') echo ' lkm-active-tab'; ?>" title="Education">Education</a>
       <a href="<?php echo get_permalink( $pastPost ); ?>" class="lkm-column one-half lkm-tab<?php if(get_field('resource_type') == 'Past Case') echo ' lkm-active-tab'; ?>" title="Past Cases">Past Cases</a>
     </div>
   </div>
+<?php endif; ?>
   <!-- End Tabs -->
 
   <!-- Resource Content -->

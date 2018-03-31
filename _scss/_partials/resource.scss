@@ -9,8 +9,8 @@
 
   h1 {
     color: $white;
-    font-size: 3.43em;
-    line-height: 1em;
+    font-size: 3em;
+    line-height: 1.1em;
     padding: 0px 0px 40px 0px;
   }
 
@@ -28,7 +28,7 @@
   width: 100%;
   height: auto;
   background: $main;
-  margin-bottom: 70px;
+  margin-bottom: 90px;
   background-size: cover;
 
   h1 {
@@ -73,4 +73,88 @@
 
 .resource-content-container {
   padding: 85px 0px;
+
+  .lkm-column.one-fourth {
+    padding: 0px 50px 0px 0px;
+
+    ul.lkm-side-menu {
+      margin-bottom: 10px;
+
+      li {
+        font-size: 1.1em;
+        display: block;
+        width: 100%;
+
+        a.lkm-side-menu-heading {
+          font-weight: 700;
+          display: block;
+          width: 95%;
+
+          &::after {
+            font-family: 'Font Awesome 5 Pro';
+            font-weight: 400;
+            color: $main;
+            float: right;
+            width: 1em;
+            text-align: center;
+          }
+        }
+
+        a.lkm-side-menu-heading::after {
+          content: "\f105";
+        }
+
+        a.lkm-side-menu-heading.open-menu::after {
+          content: "\f107";
+        }
+
+        ul {
+
+          li {
+            font-size: .85em;
+            margin: 10px 0px 10px 0px;
+            text-transform: capitalize;
+
+            a {
+              color: rgba($dark,.7);
+              font-weight: 400;
+            }
+
+            a.lkm-side-menu-current {
+              color: rgba($dark,.8);
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .lkm-column.three-fourths.resource-post {
+    padding: 0px 0px 0px 85px;
+
+    h2 {
+      text-transform: capitalize;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.disclaimer {
+  display: block;
+  margin-top: 40px;
+
+  h6 {
+    font-size: .8em;
+    color: $main;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: .8em;
+    font-style: italic;
+    font-weight: 700;
+  }
 }

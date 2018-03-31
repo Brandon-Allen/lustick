@@ -1,7 +1,5 @@
 // In the News CSS
-
 .news {
-  margin-bottom: 70px;
 
   h1, h2 {
     color: $white;
@@ -25,7 +23,11 @@
 
 .news-landing {
   margin: 0px 0px 85px 0px;
-  padding: 0px 0px 0px 85px;
+  padding: 0px 0px 85px 0px;
+
+  .three-fourths {
+    padding-left: 85px;
+  }
 
   .intro-container {
     border-bottom: 1px solid rgba($dark, .2);

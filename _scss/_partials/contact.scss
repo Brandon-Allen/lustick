@@ -1,0 +1,145 @@
+// Contact Info CSS
+.contact-content {
+  padding: 120px 0px 85px 0px;
+
+  .two-thirds {
+    padding-right: 85px;
+    border-right: 1px solid rgba($dark,.1);
+
+    .gform_wrapper {
+      display: block;
+      width: 100%;
+
+      .gfield_label {
+        display:none;
+      }
+
+      ul {
+        display: block;
+
+        li {
+          display:inline-block;
+          width: 100%;
+          margin-top: 10px;
+
+          input[type='text'], input[type='email'], input[type='phone'], select, textarea {
+            display: block;
+            width: 100%;
+            background: rgba($secondary,.1);
+          }
+
+          input[type='text'], input[type='email'], input[type='phone'], select {
+            height: 40px;
+            border-radius: 0;
+          }
+        }
+
+        li#field_2_7, li#field_2_6,li#field_2_5, li#field_2_4  {
+          width: 50%;
+        }
+      }
+    }
+
+    .gform_footer {
+      width: 100%;
+      margin-top: 10px!important;
+      padding-right: 16px!important;
+
+      input[type='submit'] {
+        background: $main;
+        width: 100%;
+        height: 50px;
+        border: 0;
+        color: $white;
+        font-weight: 800;
+        font-size: 18px;
+        text-transform: uppercase;
+        margin: 0px;
+        -webkit-appearance: none;
+        border-radius: 0;
+      }
+
+      @include min-width(768px) {
+        margin-top: 0px;
+        padding: 0px;
+      }
+    }
+  }
+
+  .one-third {
+    padding-left: 85px;
+    border-left: 1px solid rgba($dark,.1);
+  }
+
+  .number {
+    background: $main;
+    padding: 30px 10px;
+    text-align: center;
+    color: $white;
+    margin-bottom: 20px;
+
+    h5 {
+      font-size: .9em;
+    }
+
+    phone {
+      font-size: 2.3em;
+      font-weight: 900;
+      line-height: 1.5em;
+    }
+  }
+
+  .location, .hours {
+    background: rgba($secondary,.2);
+    padding: 25px 35px;
+    text-align: left;
+    margin-bottom: 20px;
+
+    h4.location-head, h4.hours-head {
+      font-size: 1.25em;
+      margin-bottom: 10px;
+    }
+
+    h4::before {
+      font-family: 'Font Awesome 5 Pro';
+      font-weight: 400;
+      width: 1.5em;
+      display: inline-block;
+    }
+
+    h4.location-head::before {
+      content: '\f1ad';
+    }
+
+    h4.hours-head::before {
+      content: '\f017';
+    }
+
+    p {
+      display: block;
+      line-height: 1.5em;
+      margin-bottom: 10px;
+
+      span {
+        font-size: 1.1em;
+        display: block;
+        font-weight: 800;
+      }
+
+      a {
+        display: block;
+        font-weight: 800;
+        margin-top: 10px;
+        font-size: .9em;
+
+        &::before {
+          font-family: 'Font Awesome 5 Pro';
+          font-weight: 900;
+          content: '\f3c5';
+          width: 1.5em;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

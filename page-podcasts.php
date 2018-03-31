@@ -16,7 +16,7 @@
   <div class="lkm-slab podcast-content">
     <div class="content-container lkm-row">
       <div class="lkm-column one-fourth add-resource-menu-sidebar">
-        Sidebar Menu
+        <?php wp_nav_menu( array( 'theme_location' => 'additional-resources-menu' ) ); ?>
       </div>
 
       <div class="lkm-column three-fourths add-resource-content">

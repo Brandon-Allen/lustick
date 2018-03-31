@@ -73,7 +73,7 @@
             <!-- <a href="">Read More<i class="far fa-chevron-right"></i></a> -->
           <?php endwhile; ?>
         <?php endif; ?>
-        <a class="see-more"  href="#" alt="">SEE MORE +</a>
+        <a class="see-more"  href="<?php the_field('charges_page_link'); ?>" alt="Charges Definition Page Link">SEE MORE +</a>
         <span class="line"></span>
         </div>
 
@@ -90,13 +90,20 @@
             <a href="<?php echo $link ?>">Read More<i class="far fa-chevron-right"></i></a>
           <?php endwhile; ?>
         <?php endif; ?>
-        <a class="see-more" href="#" alt="">Articles Page +</a>
+        <!-- <a class="see-more" href="#" alt="">Articles Page +</a> -->
         </div>
       </div>
 
       <div class="lkm-column two-thirds practice-main-content">
-        <h4>OUR PROCESS</h4>
+        <h4 class="main-heading">OUR PROCESS</h4>
         <?php the_field('practice_process'); ?>
+
+        <?php if(get_field('rights_other_info')): ?>
+          <div class="rights-container">
+            <h4 class="main-heading">Basic Rights & Other Information</h4>
+            <?php the_field('rights_other_info') ?>
+          </div>
+        <?php endif; ?>
       </div>
     </div>
   </div>

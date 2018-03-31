@@ -4,7 +4,7 @@
 
 <section id="content" role="main">
   <?php if( get_field('single_hero_image') ): ?>
-  <header class="lkm-slab news" style="background-image: url('<?php the_field('single_hero_image'); ?>');">
+  <header class="lkm-slab news additional-resource-header" style="background-image: url('<?php the_field('single_hero_image'); ?>');">
   <?php endif; ?>
     <div class="content-container lkm-row">
       <div class="lkm-column whole">
@@ -18,13 +18,13 @@
 <div class="lkm-slab news-landing">
   <div class="content-container lkm-row">
     <div class="lkm-column one-fourth">
-      <h4>This is the Sidebar</h4>
+      <?php wp_nav_menu( array( 'theme_location' => 'additional-resources-menu' ) ); ?>
     </div>
 
         <div class="lkm-column three-fourths">
           <div class="intro-container">
-            <h2>In the News</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui</p>
+            <h2><?php the_title(); ?></h2>
+            <p><?php the_field('intro_copy') ?></p>
           </div>
           <?php
           global $post;

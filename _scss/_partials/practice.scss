@@ -124,6 +124,7 @@
       h5 {
         color: $secondary;
         font-weight: 700;
+        text-transform: capitalize;
       }
 
       p {
@@ -147,7 +148,22 @@
     }
   }
 
+  .rights-container {
+    padding: 40px 0px 0px 0px;
+
+    h5 {
+      font-size: 1.1em;
+      color: $secondary;
+      font-weight: 700;
+    }
+  }
+
   .practice-main-content {
     padding: 50px 0px 75px 80px;
+
+    h4.main-heading {
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
   }
 }

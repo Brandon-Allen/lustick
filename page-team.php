@@ -7,7 +7,7 @@
   <header class="lkm-slab sub-header team" style="background-image: url('<?php the_field('single_hero_image'); ?>');">
   <?php endif; ?>
     <div class="content-container lkm-row">
-      <div class="lkm-column whole">
+      <div class="lkm-column whole team-landing-title">
         <h1 class="entry-title"><?php the_title(); ?></h1> <?php edit_post_link(); ?>
         <h2 class="page-headline"><?php the_field('single_hero_text'); ?></h2>
       </div>

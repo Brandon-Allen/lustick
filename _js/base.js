@@ -15,11 +15,16 @@ $( document ).ready(function() {
 
     var newTrans = $( ".transcript-container", $(this).parent() );
     if (newTrans.hasClass('open-transcript')) {
-      $('.open-transcript').removeClass('open-transcript');      
+      $('.open-transcript').removeClass('open-transcript');
         return;
     }
     $('.open-transcript').removeClass('open-transcript');
     var newTrans = $( ".transcript-container", $(this).parent() );
     newTrans.addClass('open-transcript');
+  });
+
+  $( '.lkm-side-menu-heading' ).click(function() {
+    $('.open-menu').removeClass('open-menu');
+    $(this).addClass("open-menu");
   });
 });

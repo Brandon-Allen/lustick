@@ -13,7 +13,7 @@ get_header(); ?>
   <div class="hero cycle-slideshow"
     data-cycle-speed="2000"
     data-cycle-timeout="7000"
-    data-cycle-pager="#cycle-pager"
+    data-cycle-pager="#cycle-pager2"
     data-cycle-pager-template="<span><div></div></span>"
     data-cycle-slides="> div.hero-container"
   >
@@ -27,7 +27,7 @@ get_header(); ?>
     ?>
 
     <div class="hero-container <?php echo $direction ?>" style="background-image:url('<?php echo $image['url']; ?>');">
-      <div id="cycle-pager"></div>
+      <div id="cycle-pager2"></div>
       <div class="hero-header">
         <h1><?php echo $headline; ?></h2>
         <h3><?php echo $subHead; ?></h3>
@@ -83,7 +83,7 @@ get_header(); ?>
           </div>
 
           <div class="profile-photo">
-            <img src='<?php echo $imageA['url'] ?>' alt="<?php echo $image['alt'] ?>" />
+            <img src='<?php echo $imageA['url'] ?>' alt="<?php echo $imageA['alt'] ?>" />
           </div>
         </div><!-- Profile Tile End -->
       <?php endwhile; ?>
@@ -93,49 +93,28 @@ get_header(); ?>
   </div><!-- Team End -->
 
 <!-- ===================== LAW PRACTICE ==================== -->
+<?php if(have_rows(practice_carousel)): ?>
   <div class="lkm-slab practice">
     <div class="lkm-row">
       <h2>Areas of Practice</h2>
       <div class="owl-carousel">
-          <div class="item"><div class="owl-container">
-            <div class="icon-container"><img src="<?php bloginfo('template_directory')?>/_images/icon-aviation-law.png" alt="Aviation Law Icon" /></div>
-            <h3>AVIATION LAW</h3>
-            <a href="">LEARN MORE</a>
-          </div></div>
-
-          <div class="item"><div class="owl-container">
-            <div class="icon-container"><img src="<?php bloginfo('template_directory')?>/_images/icon-criminal-defense.png" alt="Criminal Defense Icon" /></div>
-            <h3>CRIMINAL DEFENSE</h3>
-            <a href="">LEARN MORE</a>
-          </div></div>
-
-          <div class="item"><div class="owl-container">
-            <div class="icon-container"><img src="<?php bloginfo('template_directory')?>/_images/icon-dui-dwi.png" alt="DUI/DWI Icon" /></div>
-            <h3>DUI - DWI</h3>
-            <a href="">LEARN MORE</a>
-          </div></div>
-
-          <div class="item"><div class="owl-container">
-            <div class="icon-container"><img src="<?php bloginfo('template_directory')?>/_images/icon-gun-rights-records.png" alt="Gun Rights and Records Icon" /></div>
-            <h3>GUN RIGHTS & RECORDS</h3>
-            <a href="">LEARN MORE</a>
-          </div></div>
-
-          <div class="item"><div class="owl-container">
-            <div class="icon-container"><img src="<?php bloginfo('template_directory')?>/_images/icon-military-law.png" alt="Military Law Icon" /></div>
-            <h3>MILITARY LAW</h3>
-            <a href="">LEARN MORE</a>
-          </div></div>
-
-          <div class="item"><div class="owl-container">
-            <div class="icon-container"><img src="<?php bloginfo('template_directory')?>/_images/icon-traffic-injury.png" alt="Traffic and Injury Law Icon" /></div>
-            <h3>Traffic & Injury</h3>
-            <a href="">LEARN MORE</a>
-          </div></div>
-
+        <?php while(have_rows(practice_carousel)): the_row();
+          $icon = get_sub_field('practice_icon');
+          $title = get_sub_field('practice_title');
+          $linkP = get_sub_field('practice_page');
+        ?>
+          <div class="item">
+            <div class="owl-container">
+              <div class="icon-container"><img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" /></div>
+              <h3><?php echo $title; ?></h3>
+              <a href="<?php echo $linkP; ?>">LEARN MORE</a>
+            </div>
+          </div>
+        <?php endwhile; ?>
       </div>
     </div>
   </div><!-- Practice End -->
+<?php endif; ?>
 
 <!-- ===================== QUOTE ==================== -->
   <div class="lkm-slab quote">

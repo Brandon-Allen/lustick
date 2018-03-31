@@ -44,7 +44,7 @@ header {
     #branding {
       display: inline-block;
       @include clearfix;
-      width: 40%;
+      width: 35%;
       height: auto;
       padding: 20px 0px 20px 30px;
 
@@ -54,6 +54,10 @@ header {
 
       @include min-width(900px) {
         width:15%;
+      }
+
+      @include min-width(1224px) {
+        padding: 20px 30px 20px 0px;
       }
 
       #site-title {
@@ -153,7 +157,8 @@ header {
 
             li#menu-item-17 a:after {
               visibility: visible;
-              font-family: "Font Awesome 5 Regular";
+              font-family: "Font Awesome 5 Pro";
+              font-weight: 900;
               content: "\f015";
               font-size: 1.25em;
               line-height: 1.1;

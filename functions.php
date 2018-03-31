@@ -14,7 +14,8 @@ register_nav_menus(array(
   'footer-menu' => __( 'Footer Menu', 'blankslate' ),
   'team-menu' => __( 'Team Menu', 'blankslate' ),
   'practice-menu' => __( 'Practice Menu', 'blankslate' ),
-  'resource-menu' => __( 'Resource Menu', 'blankslate' )
+  'resource-menu' => __( 'Resource Menu', 'blankslate' ),
+  'additional-resources-menu' => __( 'Additional Resources Menu', 'blankslate' )
 ));
 }
 
@@ -248,7 +249,7 @@ function lkm_latest_resource($category=null, $resource_type=null) {
 
       if (get_field('resource_category', $post->ID) == $cat) return $post->ID;
   }
-
+  wp_reset_postdata();
 }
 
 function lkm_filtered_resources($category=null, $resource_type=null) {
@@ -275,6 +276,7 @@ function lkm_filtered_resources($category=null, $resource_type=null) {
     if (get_field('resource_category', $post->ID) == $cat) array_push($filtered_posts, $post->ID);
   }
 
+  wp_reset_postdata();
   return $filtered_posts;
 
 }

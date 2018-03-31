@@ -9,6 +9,16 @@ header.sub-header.team {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top right;
+  position: relative;
+
+  .post-edit-link {
+    position: absolute;
+    top: 0;
+  }
+
+  .team-landing-title {
+    margin-top: 60px;
+  }
 
   h1 {
     color: rgba($dark,.6);
@@ -238,9 +248,9 @@ header.sub-header.team {
     column-gap: 15px;
 
     li {
-      display: block;
+      display: inline-block;
       font-size: .9em;
-      margin: 7px 0px 7px 0px;
+      margin: 14px 0px 0px 0px;
     }
   }
 }

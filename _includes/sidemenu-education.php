@@ -1,7 +1,7 @@
 <!-- side Menu -->
 <?php
-  $id = get_the_ID();
-  $resource_category = get_field('resource_category', $id);
+global $post;  
+  $resource_category = get_field('resource_category', $post -> ID);
 
 ?>
 
@@ -54,11 +54,12 @@
 
             $menu_item_term = get_field('resource_category', $resource_post->ID);
             $menu_item_type = get_field('resource_type', $resource_post->ID);
+
         ?>
 
     <?php if (isset($menu_item_term) && $menu_item_term == $resource_category): ?>
       <?php if (isset($menu_item_type) && $menu_item_type == $resource_type): ?>
-            <li><a href="<?php the_permalink($resource); ?>" <?php if($resource == $id) echo 'class="lkm-side-menu-current"'; ?> title="<?php echo get_the_title($resource); ?>"><?php echo get_the_title($resource); ?></a></li>
+            <li><a href="<?php the_permalink($resource); ?>" <?php if($resource == $post->ID) echo 'class="lkm-side-menu-current"'; ?> title="<?php echo get_the_title($resource); ?>"><?php echo get_the_title($resource); ?></a></li>
       <?php endif; ?>
     <?php endif; ?>
 

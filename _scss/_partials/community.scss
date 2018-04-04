@@ -2,4 +2,37 @@
 
 .community {
   padding: 0px 0px 85px 0px;
+
+  .three-fourths {
+    padding: 0px 0px 0px 85px;
+
+    .sponsorship-tile-container {
+      display: block;
+      width:100%;
+      margin-top: 50px;
+
+      .sponsor-tile {
+        position: relative;
+        overflow: hidden;
+
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+          position: relative;
+          z-index: 0;
+        }
+
+        .color-block {
+          background: rgba($secondary,.07);
+          display: block;
+          width: 100%;
+          height: 500px;
+          position: relative;
+          z-index: 5;
+          position: absolute;
+        }
+      }
+    }
+  }
 }

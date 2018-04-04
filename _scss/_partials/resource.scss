@@ -31,19 +31,21 @@
   margin-bottom: 90px;
   background-size: cover;
 
-  h1 {
-    color: $white;
-    font-size: 3.43em;
-    line-height: 1em;
-    padding: 60px 0px 60px 0px;
-  }
+  .additional-resource-header-content {
+    padding: 75px 0px 75px 0px;
 
-  h4 {
-    font-size: 1em;
-    color: $white;
-    text-transform: uppercase;
-    padding: 60px 0px 0px 0px;
-    font-weight: 400;
+    h1.entry-title {
+      color: $white;
+      font-size: 3.43em;
+      line-height: 1em;
+    }
+
+    h4 {
+      font-size: 1em;
+      color: $white;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
   }
 }
 

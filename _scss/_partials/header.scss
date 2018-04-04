@@ -12,11 +12,12 @@ header {
     height: auto;
     margin: 0 auto;
     position: relative;
+    @include clearfix;
 
     .social-number-container {
       display: inline-block;
       width: 100%;
-      padding: 10px;
+      padding: 20px 30px 0px 0px;
       text-align: center;
       background: rgba($secondary, .1);
 
@@ -24,6 +25,10 @@ header {
         position: absolute;
         background: none;
         text-align: right;
+      }
+
+      @include min-width(1224px) {
+        padding: 20px 0px 0px 0px;
       }
 
       .social, span, phone {
@@ -42,9 +47,10 @@ header {
     }
 
     #branding {
-      display: inline-block;
+      float: left;
+      display: block;
       @include clearfix;
-      width: 35%;
+      width: 40%;
       height: auto;
       padding: 20px 0px 20px 30px;
 
@@ -84,10 +90,10 @@ header {
     }
 
     .nav-wrapper {
-      display: inline-block;
-      width: 55%;
+      float: left;
+      width: 60%;
       height: auto;
-      padding: 20px 30px 20px 0;
+      padding: 20px 30px 0px 0;
       margin-top: 40px;
       vertical-align: top;
 
@@ -247,6 +253,11 @@ header {
         width: 100%;
         position: relative;
         text-align: right;
+        margin-top: -20px;
+
+        @include min-width(550px) {
+          margin-top: 0px;
+        }
 
         @include min-width(900px) {
           display: none;
@@ -268,7 +279,7 @@ header {
           top: 0;
           left: 100%;
           padding: 10%;
-          z-index: 9999;
+          z-index: 20000;
 
           .fa-times {
             display: block;

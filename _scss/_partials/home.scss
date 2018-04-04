@@ -10,9 +10,33 @@
     height: 570px;
   }
 
+  #cycle-pager2 {
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 30px;
+    z-index: 999;
+    text-align: center;
+
+    span {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border: 1.5px solid $white;
+      text-align: center;
+      margin: 0px 7px;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+
+    span.cycle-pager-active {
+      background: rgba($white,.5)
+    }
+  }
+
   .hero-container.right, .hero-container.left {
     width: 100%;
-    height: 100%;
+    height: auto;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0% 0%;
@@ -21,6 +45,7 @@
 
     @include min-width(960px) {
       padding-top: 0px;
+      height: 570px;
     }
 
     .hero-header {
@@ -246,53 +271,55 @@
     @include min-width(600px) {
       padding: 50px 48px 30px 48px;
     }
+
+    @include min-width(1224px) {
+      padding: 50px 80px 30px 0px;
+    }
   }
 
   .profile {
     background: rgba($secondary,.2);
     position: relative;
 
-    .owl-nav {
-      display: none;
-    }
-
-    .owl-dots {
-      display: block;
-      border: 1px solid red;
-      width: 100%;
-      height: 20px;
-      position: absolute;
-      top: 0px;
-
-      span {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        background: $main;
-      }
-    }
-
     #cycle-pager {
       display: inline-block;
-      width: 50%;
+      width: 100%;
       position: absolute;
-      left: 50px;
+      left: 0px;
       bottom: 20px;
       z-index: 300;
       cursor: pointer;
+      text-align: center;
+
+      @include min-width(600px) {
+        width: 50%;
+        text-align: left;
+        left: 50px;
+      }
 
       span > div {
         display: inline-block;
-        height: 10px;
-        width: 10px;
-        border: 1px solid $main;
+        height: 15px;
+        width: 15px;
+        border: 1px solid $white;
         background: none;
-        margin-right: 5px;
+        margin-right: 20px;
         border-radius: 50px;
+
+        @include min-width(600px) {
+          border: 1px solid $main;
+          height: 10px;
+          width: 10px;
+          margin-right: 10px;
+        }
       }
 
       span.cycle-pager-active > div{
-        background: $main;
+        background: $white;
+
+        @include min-width(600px) {
+          background: $main;
+        }
       }
     }
     @include min-width(1220px) {
@@ -309,8 +336,9 @@
     .profile-content {
       width: 100%;
       min-height: 337px;
-      padding: 50px 20px 30px 20px;
+      padding: 50px 20px 0px 20px;
       z-index: 20;
+      position: relative;
 
       @include min-width(600px) {
         width: 62%;
@@ -335,6 +363,8 @@
       background: url('_images/portrait-gradient.png') no-repeat;
       background-position: center top;
       z-index: 0;
+      @include clearfix;
+      text-align: center;
 
       @include min-width(600px) {
         position: absolute;
@@ -346,6 +376,10 @@
       img {
         display: inline-block;
         vertical-align: bottom;
+
+        @include min-width(600px) {
+          margin: 0 auto;
+        }
       }
     }
   }
@@ -535,8 +569,8 @@
 
 .consultation-form {
   height: auto;
-  min-height: 320px;
   padding: 40px 20px;
+  @include clearfix;
 
   @include min-width(768px) {
     padding: 65px 20px;
@@ -678,7 +712,11 @@
 }
 
 .form-container.sub-footer-form {
-  padding: 60px 0px 60px 80px;
+  padding: 60px 30px 60px 30px;
+
+  @include min-width(1224px) {
+    padding: 60px 0px 60px 80px;
+  }
 
   input[type="text"], textarea {
     background: $white!important;

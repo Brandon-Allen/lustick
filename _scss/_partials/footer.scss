@@ -19,7 +19,7 @@ footer {
     position: relative;
     z-index: 25;
 
-    @include min-width(768px) {
+    @include min-width(770px) {
       min-height: 323px;
     }
 
@@ -27,7 +27,11 @@ footer {
       width: 60%;
       margin: 0 auto;
 
-      @include min-width(768px) {
+      @include min-width(500px) {
+        width: 40%;
+      }
+
+      @include min-width(770px) {
         width: 100%;
       }
     }
@@ -48,7 +52,7 @@ footer {
       padding-left: 0px;
       text-align: center;
 
-      @include min-width(768px) {
+      @include min-width(770px) {
         text-align: left;
         width: 100%;
         padding-left: 30px;
@@ -59,7 +63,7 @@ footer {
       font-size: 1em;
       line-height: 1.5em;
 
-      @include min-width(768px) {
+      @include min-width(770px) {
         font-size: .875em;
         line-height: 1.5em;
       }
@@ -88,7 +92,7 @@ footer {
     -moz-columns: 150px 3; /* Firefox */
     columns: 150px 3;
 
-    @include min-width(768px) {
+    @include min-width(770px) {
       display: block!important;
     }
 
@@ -122,7 +126,7 @@ footer {
     z-index: -25;
     background: linear-gradient(to left, #7d6949, $secondary);
 
-    @include min-width(768px) {
+    @include min-width(770px) {
 
     }
   }
@@ -134,7 +138,7 @@ footer {
     width: 100%;
     z-index: 999;
 
-    @include min-width(768px) {
+    @include min-width(770px) {
       height: 307px;
       position: absolute;
       top: 18px;

@@ -2,10 +2,10 @@
 <section id="content" role="main">
   <div class="lkm-slab team-nav">
     <div class="content-container lkm-row">
-      <div class="lkm-column three-fourths nav-text-content">
+      <div class="lkm-column two-thirds nav-text-content">
         <p><span>OUR GOAL IS EXCELLENCE IN EVERYTHING WE DO.</span> Our clients deserve the best defense. They should know their lawyers, their histories, what to expect and when. We commit our entire team to every client, a unique advantage of multiple perspectives, combined brainpower and experience for a stronger defense and a better outcome.</p>
       </div>
-      <div class="lkm-column one-fourth nav-container">
+      <div class="lkm-column one-third nav-container">
         <?php wp_nav_menu( array( 'theme_location' => 'team-menu' ) ); ?>
       </div>
     </div>
@@ -14,15 +14,19 @@
   <div class="lkm-slab single-header">
     <div class="content-container lkm-row">
       <div class="lkm-column one-third single-hero-content">
-        <h1><?php the_field('team_member_name'); ?></h1>
-        <h5><?php the_field( 'title' ) ?></h5>
+        <div class="name-title-container">
+          <h1><?php the_field('team_member_name'); ?></h1>
+          <h5><?php the_field( 'title' ) ?></h5>
+        </div>
 
-        <h4>CONTACT</h4>
-        <ul>
-          <li>Phone:<span><?php the_field( 'phone' ); ?></span></li>
-          <li>Fax:<span><?php the_field( 'fax' ); ?></span></li>
-          <li>Email:<span><?php the_field( 'email' ); ?></span></li>
-        </ul>
+        <div class="contact-container">
+          <h4>CONTACT</h4>
+          <ul>
+            <li>Phone:<span><?php the_field( 'phone' ); ?></span></li>
+            <li>Fax:<span><?php the_field( 'fax' ); ?></span></li>
+            <li>Email:<span><?php the_field( 'email' ); ?></span></li>
+          </ul>
+        </div>
       </div>
 
       <div class="lkm-column two-thirds single-hero">

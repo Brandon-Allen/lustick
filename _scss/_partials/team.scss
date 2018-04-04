@@ -2,36 +2,52 @@
 
 .sub-team-content {
   margin-bottom: 150px;
-}
-
-header.sub-header.team {
-  background-color: rgba($secondary, .2);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top right;
-  position: relative;
-
-  .post-edit-link {
-    position: absolute;
-    top: 0;
-  }
 
   .team-landing-title {
-    margin-top: 60px;
+    position: absolute;
+    bottom: 0px;
+    background: rgba($main,.9);
+    text-align: center;
+    width: 100%;
+    padding: 15px 30px;
+
+    @include min-width(1024px) {
+      position: inherit;
+      background: none;
+      text-align: left;
+      padding: 30px 30px;
+      margin-top: 60px;
+      width: 75%;
+    }
   }
 
-  h1 {
-    color: rgba($dark,.6);
+  h1.entry-title, h2.page-headline {
+    color: $white;
+    line-height: 1.1em;
+    margin-bottom: 0px;
+    padding: 0px;
+  }
+
+  h2.page-headline {
+    font-size: 2.75em;
+
+    @include min-width(1024px) {
+      font-size: 3.2em;
+    }
+  }
+}
+
+.profile-title-container {
+  padding: 0px 30px 0px 30px;
+
+  @include min-width(1224px) {
+    padding: 0px 0px 0px 0px;
   }
 }
 
 // Navigation CSS is in the settings.scss file
 
 .profile-title, .profile-title-2 {
-  width: 100%;
-  max-width: 1224px;
-  margin: 0px auto;
-  padding: 0px 20px 0px 20px;
   margin-bottom: 30px;
   position: relative;
   overflow: hidden;
@@ -54,8 +70,7 @@ header.sub-header.team {
   span {
     display: block;
     position: absolute;
-    width: 98%;
-    padding: 0px 20px 0px 20px;
+    width: 100%;
     height: 1px;
     background: rgba($secondary,.5);
     top: 15px;
@@ -73,7 +88,7 @@ header.sub-header.team {
 }
 
 .profile-grid {
-  padding: 0px 20px 0px 20px;
+  padding: 0px 30px 0px 30px;
 
   @include min-width(1224px) {
     padding: 0px 0px 0px 0px;
@@ -88,7 +103,8 @@ header.sub-header.team {
   .profile-container {
     display: block;
     background: rgba($secondary,.1);
-    min-height: 370px;
+    height: auto;
+    margin-bottom: 30px;
 
     a {
       display: block;
@@ -98,6 +114,14 @@ header.sub-header.team {
 
       &:hover {
         opacity: .8
+      }
+
+      @include min-width(768px) {
+        min-height: 300px;
+      }
+
+      @include min-width(1224px) {
+        min-height: 371px;
       }
     }
 
@@ -115,8 +139,12 @@ header.sub-header.team {
         color: rgba($dark,.9);
         font-weight: 700;
         line-height: 1.25em;
-        margin-bottom: 0px;
+        padding-bottom: 10px;
+        min-height: 40px;
 
+        @include min-width(768px) {
+            padding-bottom: 0px;
+        }
       }
     }
   }
@@ -130,19 +158,68 @@ header.sub-header.team {
 
 .single-header {
   background: rgba($secondary,.2);
+  border-top: 10px solid $main;
 
   .single-hero-content {
-    padding: 70px 50px 70px 0px;
+    padding: 30px 30px 0px 30px;
+    @include clearfix;
+
+    @include min-width(900px) {
+      padding: 50px 0px 70px 30px;
+    }
+
+    @include min-width(1224px) {
+      padding: 70px 0px 70px 0px;
+    }
+
+    .name-title-container, .contact-container {
+      float: left;
+      display: block;
+      width: 100%;
+    }
+
+    .name-title-container {
+      margin-bottom: 20px;
+
+      @include min-width(550px) {
+        width: 60%;
+      }
+
+      @include min-width(768px) {
+        width: 100%;
+        margin-bottom: 40px;
+      }
+    }
+
+    .contact-container {
+      margin-bottom: 40px;
+
+      @include min-width(550px) {
+        width: 40%;
+      }
+
+      @include min-width(768px) {
+        width: 100%;
+      }
+    }
 
     h1 {
-      font-size: 2.8em;
+      font-size: 2em;
       line-height: 1em;
+
+      @include min-width(768px) {
+        font-size: 2em;
+      }
+
+      @include min-width(1000px) {
+        font-size: 2.8em;
+      }
     }
 
     h5 {
       font-weight: 800;
       color: rgba($dark, .8);
-      margin-bottom: 40px;
+      margin-bottom: 0px;
       line-height: 1.5em;
     }
 
@@ -161,22 +238,40 @@ header.sub-header.team {
 
         span {
           display: inline-block;
-          width: 60%;
+          width: auto;
           float: right;
           font-weight: 400;
           text-align: left;
+
+          // @include min-width(500px) {
+          //   display: block;
+          //   width: 100%;
+          // }
+
+          @include min-width(830px) {
+            display: inline-block;
+            width: 60%;
+          }
         }
       }
     }
   }
 
   .single-hero {
+    height: 100%;
+    display: block;
     overflow: hidden;
 
     img {
       display: block;
-      width: 100%;
-      height: auto;
+      width: auto;
+      height: 100%;
+      min-height: 300px;
+
+      @include min-width(1170px) {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 }
@@ -186,9 +281,17 @@ header.sub-header.team {
 }
 
 .practice-areas, .education, .honors {
-  padding: 60px 30px 60px 0px;
+  padding: 40px 30px 30px 30px;
   border-right: 1px solid rgba($dark,.2);
   position: relative;
+
+  @include min-width(1224px) {
+    padding: 60px 30px 60px 0px;
+  }
+
+  h4 {
+    text-transform: uppercase;
+  }
 
   i {
     display: inline-block;
@@ -216,7 +319,11 @@ header.sub-header.team {
 }
 
 .profile-content {
-  padding: 60px 0px 30px 80px;
+  padding: 40px 30px 30px 30px;
+
+  @include min-width(1224px) {
+    padding: 60px 0px 30px 80px;
+  }
 
   p:first-child {
     color: $main;
@@ -228,7 +335,11 @@ header.sub-header.team {
 }
 
 .court-admit, .areas-interest {
-  padding: 0px 0px 75px 80px;
+  padding: 0px 30px 75px 30px;
+
+  @include min-width(1224px) {
+    padding: 0px 0px 75px 80px;
+  }
 
   h4 {
     text-transform: uppercase;
@@ -242,22 +353,24 @@ header.sub-header.team {
   ul {
     display: block;
     width: 100%;
-    -webkit-column-count: 2; /* Chrome, Safari, Opera */
-    -moz-column-count: 2; /* Firefox */
-    column-count: 2;
+    -webkit-column-count: 1; /* Chrome, Safari, Opera */
+    -moz-column-count: 1; /* Firefox */
+    column-count: 1;
     column-gap: 15px;
+
+    @include min-width(1000px) {
+      -webkit-column-count: 2; /* Chrome, Safari, Opera */
+      -moz-column-count: 2; /* Firefox */
+      column-count: 2;
+    }
 
     li {
       display: inline-block;
       font-size: .9em;
       margin: 14px 0px 0px 0px;
+      width: 100%;
     }
   }
-}
-
-.single-quote {
-  padding: 60px 80px 60px 0px;
-  border-right: 1px solid rgba($dark,.2);
 }
 
 .sub-footer-form {

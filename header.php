@@ -4,12 +4,12 @@
   <meta charset="<?php bloginfo( 'charset' ); ?>" />
   <meta name="viewport" content="width=device-width" />
   <!-- Style Sheets -->
-  <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/_fontawesomeCSS/fontawesome-all.css">
-  <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/_fontawesomeCSS/owl.carousel.min.css">
-  <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/_fontawesomeCSS/owl.theme.default.min.css">
-  <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/style.css">
-
   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,700i,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/_vendorCSS/fontawesome-all.css">
+  <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/_vendorCSS/owl.carousel.min.css">
+  <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/_vendorCSS/owl.theme.default.min.css">
+  <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/_vendorCSS/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ) ?>/style.css">
 
   <?php wp_head(); ?>
 </head>

@@ -16,10 +16,10 @@
 
   <div class="lkm-slab team-nav">
     <div class="content-container lkm-row">
-      <div class="lkm-column three-fourths nav-text-content">
+      <div class="lkm-column two-thirds nav-text-content">
         <p><span>OUR GOAL IS EXCELLENCE IN EVERYTHING WE DO.</span> Our clients deserve the best defense. They should know their lawyers, their histories, what to expect and when. We commit our entire team to every client, a unique advantage of multiple perspectives, combined brainpower and experience for a stronger defense and a better outcome.</p>
       </div>
-      <div class="lkm-column one-fourth nav-container">
+      <div class="lkm-column one-third nav-container">
         <?php wp_nav_menu( array( 'theme_location' => 'team-menu' ) ); ?>
       </div>
     </div>
@@ -37,12 +37,16 @@
 
     if ( $the_query->have_posts() ) {
     ?>
-  	<div class="lkm-slab">
-      <div class="profile-title">
-        <h2>ATTORNEYS</h2>
-        <span></span>
+    <div class="lkm-slab profile-title-container">
+      <div class="content-container lkm-row">
+        <div class="lkm-column whole profile-title">
+          <h2>ATTORNEYS</h2>
+          <span></span>
+        </div>
       </div>
-      <div class="content-container lkm-row profile-grid">
+    </div>
+  	<div class="lkm-slab">
+    <div class="content-container lkm-row profile-grid">
     <?php
   	while ( $the_query->have_posts() ) {
   		$the_query->the_post();
@@ -79,11 +83,15 @@
 
     if ( $the_query->have_posts() ) {
     ?>
-  	<div class="lkm-slab">
-      <div class="profile-title">
-        <h2>PARALEGAL & ADMINISTRATION</h2>
-        <span></span>
+    <div class="lkm-slab profile-title-container">
+      <div class="content-container lkm-row">
+        <div class="lkm-column whole profile-title-2">
+          <h2>PARALEGAL & ADMINISTRATION</h2>
+          <span></span>
+        </div>
       </div>
+    </div>
+  	<div class="lkm-slab">
       <div class="content-container lkm-row profile-grid">
     <?php
   	while ( $the_query->have_posts() ) {

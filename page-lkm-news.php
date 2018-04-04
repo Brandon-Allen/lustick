@@ -8,8 +8,10 @@
   <?php endif; ?>
     <div class="content-container lkm-row">
       <div class="lkm-column whole">
-        <h2 class="page-headline"><?php the_field('single_hero_text'); ?></h2>
-        <h1 class="entry-title"><?php the_title(); ?></h1> <?php edit_post_link(); ?>
+        <div class="additional-resource-header-content">
+          <h2 class="page-headline"><?php the_field('single_hero_text'); ?></h2>
+          <h1 class="entry-title"><?php the_title(); ?></h1> <?php edit_post_link(); ?>
+        </div>
       </div>
     </div>
   </header>

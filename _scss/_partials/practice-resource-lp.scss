@@ -17,34 +17,64 @@
 
 .landing {
   width: 100%;
-  height: auto;
+  height: 350px;
   display: block;
   background: rgba($secondary, 1);
-  padding: 70px 20px;
+  padding: 70px 30px;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: right top;
+  position: relative;
 
+  @include min-width(1024px) {
 
-  h1, h2.page-headline, p {
+  }
+
+  @include min-width(1224px) {
+      padding: 70px 0px;
+  }
+
+  h1.entry-title {
+    display: none!important;
+
+    @include min-width(1024px) {
+      display: block!important;
+    }
+  }
+
+  h2.page-headline {
+  }
+
+  h1.entry-title, h2.page-headline, p {
     color: $white;
+    display: block;
+    width: auto;
+    padding: 0px 0px;
   }
 
   p {
-    display: block;
-    width: 45%;
     margin-top: 10px;
-    font-size: 1.375em;
+    font-size: 1.25em;
     font-weight: 700;
     line-height: 1.5em;
 
     a {
+      display: block;
+      margin-top: 10px;
       font-weight: 800;
+      font-size: .75em;
+      background: $white;
+      padding: 5px 10px;
+      text-align: center;
+      width: 20%;
+      min-width: 150px;
+      margin-top: 15px;
     }
   }
 }
 
 .practice-grid {
-  padding: 80px 20px 80px 20px;
+  padding: 80px 30px 80px 30px;
 
   @include min-width(1224px) {
     padding: 80px 0px 80px 0px;
@@ -70,24 +100,55 @@
 
   .practice-container {
     height: 410px;
+    margin-bottom: 24px;
     text-align: center;
     @include clearfix;
+
+    @include min-width(768px) {
+      width: 49%;
+    }
+
+    @include min-width(1224px) {
+      width: 32%;
+    }
 
     .practice-img-container {
       display: block;
       width: 100%;
       height: 315px;
+      max-height: 315px;
       position: relative;
       padding: 0px 0px 0px 0px;
       margin-bottom: 30px;
+      overflow: hidden;
 
       img{
-        width: 100%;
-        height: auto;
+        width: auto;
+        height: 100%;
         display: block;
         position: absolute;
         top: 0;
         left: 0;
+
+        @include min-width(470px) {
+          width: 100%;
+          height: auto;
+        }
+
+        @include min-width(768px) {
+          width: auto;
+          height: 100%;
+        }
+
+        @include min-width(896px) {
+          width: 100%;
+          height: auto;
+        }
+
+        @include min-width(1224px) {
+          width: 100%;
+          height: auto;
+        }
       }
 
       span {
@@ -138,6 +199,22 @@
         opacity: .9;
       }
 
+    }
+  }
+
+  @include min-width(768px) {
+    .one-third-grid:nth-child(2n) {
+      margin: 0px 0% 24px 0px;
+    }
+  }
+
+  @include min-width(1224px) {
+    .one-third-grid:nth-child(2n) {
+      margin: 0px 2% 24px 0px;
+    }
+
+    .one-third-grid:nth-child(3n) {
+      margin: 0px 0% 24px 0px;
     }
   }
 }

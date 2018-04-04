@@ -17,23 +17,22 @@ get_header(); ?>
     data-cycle-pager-template="<span><div></div></span>"
     data-cycle-slides="> div.hero-container"
   >
+    <div id="cycle-pager2"></div>
     <?php while( have_rows('hero_slider') ): the_row();
       //get_class_vars
       $image = get_sub_field('background_image');
       $headline = get_sub_field('headline_copy');
       $subHead = get_sub_field('sub_headline_copy');
-      $button = get_sub_field('link_button');
+      $button = get_sub_field('button_link');
       $direction = get_sub_field('text_direction');
     ?>
-
     <div class="hero-container <?php echo $direction ?>" style="background-image:url('<?php echo $image['url']; ?>');">
-      <div id="cycle-pager2"></div>
       <div class="hero-header">
         <h1><?php echo $headline; ?></h2>
         <h3><?php echo $subHead; ?></h3>
         <?php if('$button'): ?>
           <div class="button-container">
-            <a href="#" class="cta">
+            <a data-fancybox href="<?php echo $button ?>" class="cta">
               <span class='icons'>
                 <i class="fas fa-circle"></i>
                 <i class="fas fa-play"></i>
@@ -181,6 +180,7 @@ get_header(); ?>
 
 </section>
 <script src="<?php bloginfo('template_directory'); ?>/_js/jquery.cycle2.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/_js/jquery.fancybox.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/_js/owl.carousel.min.js"></script>
 <script type="text/javascript">
   var $ = jQuery;
@@ -209,7 +209,12 @@ get_header(); ?>
             items:5
         }
     }
-  })
+  });
+
+  $("[data-fancybox]").fancybox({
+		// Options will go here
+	});
+
 </script>
 
 <?php get_footer(); ?>

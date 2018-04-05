@@ -1,6 +1,4 @@
-<?php get_header();
-  $resource_type_class = 'resource-' . strtolower(str_replace(' ', '-', get_field('resource_type')));
-?>
+<?php get_header(); ?>
 
 <section id="content" role="main">
 
@@ -24,13 +22,37 @@
     </div>
   </div>
 
+  <!-- Tabs -->
+  <?php
+    global $post;
+    $resource_category = get_field('resource_category');
+
+    $edPost = lkm_latest_resource($resource_category, 'Charge FAQs');
+    $pastPost = lkm_latest_resource($resource_category, 'Past Case');
+  ?>
+
+  <?php if (isset($edPost) && isset($pastPost)): ?>
+  <div class="lkm-slab tabs">
+    <div class="content-container lkm-row">
+      <a href="<?php echo get_permalink( $edPost ); ?>" class="lkm-column one-half lkm-tab<?php if(get_field('resource_type') != 'Past Case') echo ' lkm-active-tab'; ?>" title="Education">Education</a>
+      <a href="<?php echo get_permalink( $pastPost ); ?>" class="lkm-column one-half lkm-tab<?php if(get_field('resource_type') == 'Past Case') echo ' lkm-active-tab'; ?>" title="Past Cases">Past Cases</a>
+    </div>
+  </div>
+<?php endif; ?>
+  <!-- End Tabs -->
 
   <!-- Resource Content -->
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-  <div class="lkm-slab resource-content-container<?php if (get_field('resource_type')) echo ' ' . $resource_type_class; ?>">
+  <div class="lkm-slab resource-content-container">
     <div class="content-container lkm-row">
       <div class="lkm-column one-fourth">
-        <?php get_template_part( '_includes/sidemenu-education'); ?>
+        <?php if(get_field('resource_type') == 'Past Case') {
+          get_template_part( '_includes/sidemenu-past-cases');
+        } else {
+          get_template_part( '_includes/sidemenu-education');
+        }
+        ?>
+
       </div>
       <div class="lkm-column three-fourths resource-post">
       <h2 class='article-title'><?php the_title(); ?></h2>

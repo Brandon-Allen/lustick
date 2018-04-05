@@ -111,7 +111,8 @@
         }
 
         ul {
-
+          height: 0;
+          overflow: hidden;
           li {
             font-size: .85em;
             margin: 10px 0px 10px 0px;
@@ -142,6 +143,50 @@
     }
   }
 }
+
+.resource-charge-faqs {
+  .lkm-column.one-fourth {
+    ul.lkm-side-menu-charge-faqs {
+      li {
+        ul {
+          height: auto;
+          max-height: 500px;
+          overflow-y: scroll;
+        }
+      }
+    }
+  }
+}
+
+.resource-article {
+  .lkm-column.one-fourth {
+    ul.lkm-side-menu-article {
+      li {
+        ul {
+          height: auto;
+          max-height: 100px;
+          overflow-y: scroll;
+        }
+      }
+    }
+  }
+}
+
+.resource-past-case {
+  .lkm-column.one-fourth {
+    ul.lkm-side-menu-past-case {
+      li {
+        ul {
+          height: auto;
+          max-height: 500px;
+          overflow-y: scroll;
+        }
+      }
+    }
+  }
+}
+
+
 
 .disclaimer {
   display: block;

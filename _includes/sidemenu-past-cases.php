@@ -1,3 +1,38 @@
+
+<!-- Removed from single-resource.php-->
+<!-- Tabs -->
+<?php
+  global $post;
+  $resource_category = get_field('resource_category');
+
+  $edPost = lkm_latest_resource($resource_category, 'Charge FAQs');
+  $pastPost = lkm_latest_resource($resource_category, 'Past Case');
+?>
+
+<?php if (isset($edPost) && isset($pastPost)): ?>
+<div class="lkm-slab tabs">
+  <div class="content-container lkm-row">
+    <a href="<?php echo get_permalink( $edPost ); ?>" class="lkm-column one-half lkm-tab<?php if(get_field('resource_type') != 'Past Case') echo ' lkm-active-tab'; ?>" title="Education">Education</a>
+    <a href="<?php echo get_permalink( $pastPost ); ?>" class="lkm-column one-half lkm-tab<?php if(get_field('resource_type') == 'Past Case') echo ' lkm-active-tab'; ?>" title="Past Cases">Past Cases</a>
+  </div>
+</div>
+<?php endif; ?>
+<!-- End Tabs -->
+<!-- Removed from single-resource.php-->
+
+
+<!-- Removed from single-resource.php-->
+<?php
+/*
+if(get_field('resource_type') == 'Past Case') {
+ get_template_part( '_includes/sidemenu-past-cases');
+} else {
+get_template_part( '_includes/sidemenu-education');
+}
+*/
+?>
+<!-- Removed from single-resource.php-->
+
 <!-- side Menu -->
 <?php
   $id = get_the_ID();

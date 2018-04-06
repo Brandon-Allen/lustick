@@ -28,7 +28,7 @@ get_header(); ?>
     ?>
     <div class="hero-container <?php echo $direction ?>" style="background-image:url('<?php echo $image['url']; ?>');">
       <div class="hero-header">
-        <h1><?php echo $headline; ?></h2>
+        <h1><?php echo $headline; ?></h1>
         <h3><?php echo $subHead; ?></h3>
         <?php if('$button'): ?>
           <div class="button-container">

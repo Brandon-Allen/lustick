@@ -92,12 +92,12 @@ get_header(); ?>
   </div><!-- Team End -->
 
 <!-- ===================== LAW PRACTICE ==================== -->
-<?php if(have_rows(practice_carousel)): ?>
+<?php if(have_rows('practice_carousel')): ?>
   <div class="lkm-slab practice">
     <div class="lkm-row">
       <h2>Areas of Practice</h2>
       <div class="owl-carousel">
-        <?php while(have_rows(practice_carousel)): the_row();
+        <?php while(have_rows('practice_carousel')): the_row();
           $icon = get_sub_field('practice_icon');
           $title = get_sub_field('practice_title');
           $linkP = get_sub_field('practice_page');

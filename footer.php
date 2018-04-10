@@ -6,8 +6,8 @@
 
   <div class="lkm-slab footer-content">
     <div class="content-container lkm-row">
-      <div class="lkm-column one-sixth">
-        <div class="footer-logo"><img src="<?php bloginfo('template_directory')?>/_images/logo-footer-lustick.png" alt="Lustick Kaiman and Madrone Logo"></div>
+      <div class="lkm-column one-sixth footer-logo">
+          <img src="<?php bloginfo('template_directory')?>/_images/logo-footer-lustick.png" alt="Lustick Kaiman and Madrone Logo">
       </div>
       <div class="lkm-column one-sixth footer-contact">
         <p class="address">222 Grand Ave., Ste A Bellingham, WA 98225</p>

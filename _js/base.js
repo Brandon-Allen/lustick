@@ -22,9 +22,5 @@ $( document ).ready(function() {
     var newTrans = $( ".transcript-container", $(this).parent() );
     newTrans.addClass('open-transcript');
   });
-
-  $( '.lkm-side-menu-heading' ).click(function() {
-    $('.open-menu').removeClass('open-menu');
-    $(this).addClass("open-menu");
-  });
+  
 });

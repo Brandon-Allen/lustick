@@ -11,6 +11,7 @@ get_header(); ?>
 <section id="content" role="main">
   <?php if( have_rows('hero_slider') ): ?>
   <div class="hero cycle-slideshow"
+    data-cycle-random="true"
     data-cycle-speed="2000"
     data-cycle-timeout="7000"
     data-cycle-pager="#cycle-pager2"
@@ -59,6 +60,7 @@ get_header(); ?>
         <a href="/team/">VIEW THE TEAM +</a>
       </div>
       <div class="lkm-column one-half profile cycle-slideshow"
+        data-cycle-random="true"
         data-cycle-timeout="0"
         data-cycle-pager="#cycle-pager"
         data-cycle-pager-template="<span><div></div></span>"

@@ -4,7 +4,7 @@
   <div class="lkm-slab practice-nav">
     <div class="content-container lkm-row">
       <div class="lkm-column three-fourths nav-text-content">
-        <p><span>YOUR PROBLEMS ARE OUR PROBLEMS.</span> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+        <p><span>YOUR PROBLEMS ARE OUR PROBLEMS.</span> Our team specializes in DUI, Criminal Defense, Gun Rights, Military & Aviation Law Attorneys serving Whatcom, Skagit, and San Juan counties, and the Federal and Military court systems.</p>
       </div>
       <div class="lkm-column one-fourth nav-container">
         <?php wp_nav_menu( array( 'theme_location' => 'practice-menu' ) ); ?>

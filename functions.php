@@ -12,6 +12,9 @@ global $content_width;
 register_nav_menus(array(
   'main-menu' => __( 'Main Menu', 'blankslate' ),
   'footer-menu' => __( 'Footer Menu', 'blankslate' ),
+  'footer-menu-01' => __( 'Footer Menu 01', 'blankslate' ),
+  'footer-menu-02' => __( 'Footer Menu 02', 'blankslate' ),
+  'footer-menu-03' => __( 'Footer Menu 03', 'blankslate' ),
   'team-menu' => __( 'Team Menu', 'blankslate' ),
   'practice-menu' => __( 'Practice Menu', 'blankslate' ),
   'resource-menu' => __( 'Resource Menu', 'blankslate' ),

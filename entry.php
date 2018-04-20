@@ -1,6 +1,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <header>
-    <h1><?php the_title(); ?></h1> <?php edit_post_link(); ?>
+    <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2> <?php edit_post_link(); ?>
     <?php if ( !is_search() ) get_template_part( 'entry', 'meta' ); ?>
   </header>
 

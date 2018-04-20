@@ -1,5 +1,42 @@
 // Resource CSS
 
+.resource-single-header {
+  background: $main;
+
+  .lkm-column.whole {
+    padding: 40px 30px 40px 30px;
+
+    @include min-width(1224px) {
+      padding: 50px 0px 50px 0px;
+    }
+  }
+  h1, h2 {
+    color: $white;
+    line-height: 1em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+    line-height: 1.5em;
+  }
+
+  h2 {
+    font-weight:  400;
+    padding: 50px 0px 0px 0px;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    padding: 0px 0px 50px 0px;
+  }
+
+  h1.entry-title {
+    color: $white;
+    font-size: 3.43em;
+    line-height: 1em;
+  }
+}
+
 .resource-nav {
   height: auto;
 
@@ -20,32 +57,6 @@
     text-transform: uppercase;
     padding: 60px 0px 0px 0px;
     font-weight: 400;
-  }
-}
-
-.additional-resource-header {
-  display: block;
-  width: 100%;
-  height: auto;
-  background: $main;
-  margin-bottom: 90px;
-  background-size: cover;
-
-  .additional-resource-header-content {
-    padding: 75px 0px 75px 0px;
-
-    h1.entry-title {
-      color: $white;
-      font-size: 3.43em;
-      line-height: 1em;
-    }
-
-    h4 {
-      font-size: 1em;
-      color: $white;
-      text-transform: uppercase;
-      font-weight: 400;
-    }
   }
 }
 
@@ -74,10 +85,138 @@
 }
 
 .resource-content-container {
-  padding: 85px 0px;
+  padding: 0px 0px 85px 0px;
+
+  @include min-width(960px) {
+    padding: 85px 0px;
+  }
 
   .lkm-column.one-fourth {
-    padding: 0px 50px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    width: 100%;
+
+    @include min-width(960px) {
+      padding: 0px 0px 0px 50px;
+      width: 25%;
+    }
+
+    @include min-width(1224px) {
+      padding: 0px 50px 0px 0px;
+      width: 25%;
+    }
+
+    .desktop-resource-nav {
+      display: none;
+
+      @include min-width(960px) {
+        display: block;
+      }
+    }
+
+    .mobile-resource-nav.open-menu {
+
+      .mobile-sidebar-trigger {
+        h4 {
+          &::after {
+            content: '\f146';
+          }
+        }
+      }
+
+      .nav-case {
+        padding: 30px;
+        background: rgba($secondary,.1);
+
+        ul.lkm-side-menu-charge-faqs, ul.lkm-side-menu-article, ul.lkm-side-menu-past-case {
+
+          li {
+            height: auto;
+
+            ul {
+              background: none;
+
+              li {
+                height: 30px;
+                margin: 5px 0px 5px 0px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .mobile-resource-nav {
+      display: block;
+      background: rgba($secondary, .2);
+      padding: 30px;
+      margin-bottom: 50px;
+
+      @include min-width(960px) {
+        margin-bottom: 0px;
+      }
+
+      .mobile-sidebar-trigger {
+        background: $secondary;
+        color: $white;
+        display: block;
+        cursor: pointer;
+
+        h4 {
+          font-size: 1em;
+          color: $white;
+          text-transform: uppercase;
+          text-align: left;
+          display: block;
+          padding: 20px 20px;
+
+          @include min-width(330px) {
+            font-size: 1.25em;
+          }
+
+          &::after {
+            font-family: 'Font Awesome 5 Pro';
+            font-weight: 400;
+            font-size: .9em;
+            display: inline-block;
+            width: auto;
+            height: auto;
+            content: '\f0fe';
+            float: right;
+          }
+        }
+      }
+
+      ul.lkm-side-menu-charge-faqs, ul.lkm-side-menu-article, ul.lkm-side-menu-past-case {
+        overflow: hidden;
+        margin-bottom: 0px;
+
+        li {
+          height: 0px;
+          -webkit-transition:height 300ms ease;
+          -moz-transition:height 300ms ease;
+          -o-transition:height 300ms ease;
+          transition:height 300ms ease;
+
+          a.lkm-side-menu-heading:after {
+            content: "\f107";
+          }
+
+          ul {
+            height: auto;
+            padding: 0px 0px 0px 0px;
+            margin: 0px 0px 0px 0px;
+
+            li a, li a.lkm-side-menu-current {
+              color: rgba($main, .8);
+            }
+          }
+        }
+      }
+
+      @include min-width(960px) {
+        display: none;
+      }
+    }
 
     ul.lkm-side-menu {
       margin-bottom: 10px;
@@ -135,7 +274,18 @@
   }
 
   .lkm-column.three-fourths.resource-post {
-    padding: 0px 0px 0px 85px;
+    padding: 0px 30px 0px 30px;
+    width: 100%;
+
+    @include min-width(960px) {
+      padding: 0px 30px 0px 50px;
+      width: 75%;
+    }
+
+    @include min-width(1224px) {
+      padding: 0px 0px 0px 85px;
+      width: 75%;
+    }
 
     h2 {
       text-transform: capitalize;

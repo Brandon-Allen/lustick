@@ -22,10 +22,10 @@
 
         <div class="social-number-container">
           <div class="social">
-            <i class="fab fa-facebook-square"></i>
+            <a href="https://www.facebook.com/LustickKaimanMadrone/" target="_blank"><i class="fab fa-facebook-square"></i></a>
           </div>
           <span>FREE CASE EVALUATION:</span>
-          <phone>360 685 4221</phone>
+          <a class="phone">360 685 4221</a>
         </div>
 
         <section id="branding">
@@ -42,10 +42,7 @@
         <section class="nav-wrapper">
           <nav id="menu" role="navigation">
             <div id="search">
-              <i class="fas fa-search"></i>
-              <div class="search-wrapper">
-                <?php get_search_form(); ?>
-              </div>
+              <i class="fas fa-search search-form-trigger"></i>
             </div>
             <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
           </nav>
@@ -66,5 +63,15 @@
 
       </div><!-- Header Wrapper End -->
     </header>
+
+    <div class="lkm-slab search-container">
+      <div class="content-container lkm-row">
+        <div class="lkm-column whole">
+            <div class="search-wrapper-desktop">
+              <?php get_search_form(); ?>
+            </div>
+        </div>
+      </div>
+    </div>
 
 <div id="container">

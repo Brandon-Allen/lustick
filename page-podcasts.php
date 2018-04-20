@@ -3,7 +3,7 @@
 ?>
 
 <section id="content" role="main">
-  <header class="header additional-resource-header" style="background-image:url('<?php the_field('podcast_hero_bkgnd') ?>')">
+  <header class="header additional-resource-header" style="background-image: url('<?php the_field('single_hero_image'); ?>');">
     <div class="lkm-slab" >
       <div class="content-container lkm-row">
         <div class="lkm-column whole">
@@ -19,8 +19,14 @@
   <div class="lkm-slab podcast-content">
     <div class="content-container lkm-row">
       <div class="lkm-column one-fourth add-resource-menu-sidebar">
-        <?php wp_nav_menu( array( 'theme_location' => 'additional-resources-menu' ) ); ?>
+        <div class="mobile-sidebar-trigger">
+          <h4>Additional Resources</h4>
+        </div>
+        <div class="nav-case">
+          <?php wp_nav_menu( array( 'theme_location' => 'additional-resources-menu' ) ); ?>
+        </div>
       </div>
+
 
       <div class="lkm-column three-fourths add-resource-content">
         <div class="podcast-intro">
@@ -69,14 +75,8 @@
       </div>
 
 
-      <div class="lkm-column three-fourths form-container sub-footer-form">
-        <h3>Free Consultation</h3>
-        <p><strong>READY TO TALK ABOUT YOUR CASE?</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-        <?php
-          gravity_form( 1, $display_title = false, $display_description = false, $display_inactive = false, $field_values = null, $ajax = false, $tabindex, $echo = true );
-        ?>
-        <div class="bg-color-slab"></div>
-      </div>
+      <!-- Consultation form include -->
+      <?php include '_includes/consultation-form.php' ?>
     </div>
   </div>
 

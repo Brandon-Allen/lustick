@@ -1,10 +1,8 @@
 // Community CSS
 
 .community {
-  padding: 0px 0px 85px 0px;
 
   .three-fourths {
-    padding: 0px 0px 0px 85px;
 
     .sponsorship-tile-container {
       display: block;
@@ -14,6 +12,18 @@
       .sponsor-tile {
         position: relative;
         overflow: hidden;
+        width: 100%;
+        margin-bottom: 24px;
+        margin-right: 2%;
+
+        @include min-width(500px) {
+            width: 49%;
+            float: left;
+        }
+
+        @include min-width(960px) {
+            width: 32%;
+        }
 
         img {
           display: block;
@@ -27,10 +37,26 @@
           background: rgba($secondary,.07);
           display: block;
           width: 100%;
-          height: 500px;
+          height: 1000px;
           position: relative;
           z-index: 5;
           position: absolute;
+        }
+
+        @include min-width(500px) {
+          &:nth-child(2n) {
+            margin: 0px 0px 24px 0px;
+          }
+
+          &:nth-child(3n) {
+            margin: 0px 2% 24px 0px;
+          }
+        }
+
+        @include min-width(960px) {
+          &:nth-child(3n) {
+            margin: 0px 0px 24px 0px;
+          }
         }
       }
     }

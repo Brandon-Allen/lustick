@@ -18,10 +18,15 @@
 
 <div class="lkm-slab community">
   <div class="content-container lkm-row">
-    <div class="lkm-column one-fourth">
-      <?php wp_nav_menu( array( 'theme_location' => 'additional-resources-menu' ) ); ?>
+    <div class="lkm-column one-fourth add-resource-menu-sidebar">
+      <div class="mobile-sidebar-trigger">
+        <h4>Additional Resources</h4>
+      </div>
+      <div class="nav-case">
+        <?php wp_nav_menu( array( 'theme_location' => 'additional-resources-menu' ) ); ?>
+      </div>
     </div>
-    <div class="lkm-column three-fourths">
+    <div class="lkm-column three-fourths add-resource-content">
       <h2><?php the_field('community_headline') ?></h2>
       <p><?php the_field('community_intro_text') ?></p>
 
@@ -55,14 +60,8 @@
     </div>
 
 
-    <div class="lkm-column three-fourths form-container sub-footer-form">
-      <h3>Free Consultation</h3>
-      <p><strong>READY TO TALK ABOUT YOUR CASE?</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-      <?php
-        gravity_form( 1, $display_title = false, $display_description = false, $display_inactive = false, $field_values = null, $ajax = false, $tabindex, $echo = true );
-      ?>
-      <div class="bg-color-slab"></div>
-    </div>
+    <!-- Consultation form include -->
+    <?php include '_includes/consultation-form.php' ?>
   </div>
 </div>
 

@@ -17,7 +17,7 @@ header {
     .social-number-container {
       display: inline-block;
       width: 100%;
-      padding: 20px 30px 0px 0px;
+      padding: 10px 10px 10px 10px;
       text-align: center;
       background: rgba($secondary, .1);
 
@@ -31,18 +31,28 @@ header {
         padding: 20px 0px 0px 0px;
       }
 
-      .social, span, phone {
+      span, a.phone {
         display: inline-block;
       }
 
       .social {
+        display: none;
         color: $secondary;
-        padding-right: 20px;
+        padding-right: 10px;
+
+        @include min-width(370px) {
+          display: inline-block;
+        }
+
+        @include min-width(768px) {
+          padding-right: 20px;
+        }
       }
 
-      span, phone {
+      span, a.phone {
         color: $main;
         font-weight: 800;
+        margin-bottom: 0px;
       }
     }
 
@@ -123,18 +133,17 @@ header {
             float: right;
             padding-left: 20px;
             @include clearfix;
-
-            .search-wrapper {
-              display: none;
-            }
+            cursor: pointer;
 
             i {
               font-size: 1.2em;
               line-height: 1.5;
               color: $main;
-            }
-            label.screen-reader-text {
-              display: none;
+              @include transition;
+
+              &:hover {
+                color: $secondary;
+              }
             }
           }
 
@@ -145,8 +154,12 @@ header {
             float: right;
             @include clearfix;
 
-            li.current-menu-item a, ul.sub-menu li.current-menu-item a  {
+            li.current-menu-item a, li.current-page-parent > a, li.current-menu-parent > a {
               color: $main;
+
+              ul.sub-menu li.menu-item-object-page a {
+                color: rgba($dark,.6)!important;
+              }
             }
 
             li.current-menu-item ul.sub-menu li a {
@@ -280,6 +293,7 @@ header {
           left: 100%;
           padding: 10%;
           z-index: 20000;
+          overflow: auto;
 
           .fa-times {
             display: block;
@@ -349,6 +363,8 @@ header {
                   width: 100%;
                   padding: 10px 5%;
                   -webkit-appearance: none;
+                  font-size: 1em;
+                  font-family: $primary-font;
                 }
 
                 button[type='submit'] {
@@ -368,5 +384,62 @@ header {
       }
     }
   }
+}
 
+.search-container.open-form {
+  height: 80px;
+}
+
+.search-container {
+  display: block;
+  background: rgba($secondary,.5);
+  overflow: hidden;
+  height: 0px;
+  -webkit-transition:height 300ms ease;
+  -moz-transition:height 300ms ease;
+  -o-transition:height 300ms ease;
+  transition:height 300ms ease;
+  padding: 0px 30px;
+
+  @include min-width(1224) {
+    padding: 0px 0px;
+  }
+
+  .search-wrapper-desktop {
+    display: block;
+    position: relative;
+    padding: 20px 0px;
+
+    #searchform {
+      width: 100%;
+
+      label.screen-reader-text {
+        display: none;
+      }
+
+      input[type='text'] {
+        width: 100%;
+        padding: 10px 20px;
+        -webkit-appearance: none;
+        font-size: 1em;
+        font-family: $primary-font;
+      }
+
+      button[type='submit'] {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        bottom: 5px;
+        background: none;
+        border: none;
+      }
+    }
+  }
+
+  i {
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: $main;
+    font-weight: 700;
+  }
 }

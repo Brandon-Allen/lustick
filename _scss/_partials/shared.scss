@@ -58,6 +58,15 @@ header.sub-header {
   padding: 10px;
 }
 
+// =============== Sidebar Column & Content Column Borders ================ //
+// .sidebar-column {
+//   border-right: 1px solid rgba($dark,.2);
+// }
+
+.content-column {
+  border-left: 1px solid rgba($dark,.2);
+}
+
 // ============== Team & Practice Nav CSS ===========//
 
 .team-nav, .practice-nav, .resource-nav {
@@ -376,11 +385,54 @@ article {
   }
 }
 .single-post-container {
-  padding: 85px 0px 85px 85px;
+  padding: 85px 30px 85px 30px;
+
+  @include min-width(1224px) {
+    padding: 85px 0px 85px 0px;
+  }
+
+  .three-fourths {
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+
+    @include min-width(960px) {
+      width: 75%;
+    }
+
+    @include min-width(1224px) {
+      width: 75%;
+      padding: 0px 0px 0px 85px;
+    }
+  }
+
+  .footer-post {
+    text-align: center;
+    margin-top: 30px;
+    @include clearfix;
+
+    span.meta-nav {
+      font-weight: 700;
+    }
+
+    span.meta-nav.left {
+      float: left;
+    }
+
+    span.meta-nav.right {
+      float: right;
+    }
+  }
 
   section#comments {
     display: none;
   }
+}
+.form-container #gform_confirmation_message_1, #gform_confirmation_wrapper_2 #gform_confirmation_message_2 {
+  background: rgba($secondary,.1);
+  text-align: center;
+  padding: 50px 30px;
+  font-weight: 700;
+  color: $main;
 }
 
 section.entry-content {
@@ -536,43 +588,309 @@ ul {
   }
 }
 
-// Additional resources Header Margin
+.support-page-header {
+  background: $main;
 
-
-// Additional resources sidebar menu
-
-.menu-additional-resources-container {
-  display: block;
-  padding-right: 0px;
-
-  ul#menu-additional-resources {
-    @include clearfix;
-
-    li {
-      display: block;
-      margin-bottom: 1em;
-      font-size: 1.125em;
-      font-weight: 700;
-      @include clearfix;
-      opacity: .6;
-      @include transition;
-
-      &::after {
-        font-family: 'Font Awesome 5 Pro';
-        font-weight: 700;
-        content: '\f105';
-        width: 1.5em;
-        float: right;
-        color: $main;
-      }
-
-      &:hover {
-        opacity: 1;
-      }
+  .support-page {
+    h1, h2 {
+      color: $white;
+      line-height: 1em;
+      padding: 30px 0px 30px 0px;
     }
 
-    li.current-menu-item {
-      opacity: 1;
+    h2 {
+      font-size: 2em;
     }
   }
 }
+
+.support-page-content-2-col {
+  padding: 50px 30px 50px 30px;
+
+  @include min-width(1224px) {
+    padding: 50px 85px 50px 0px;
+  }
+
+  .post {
+    margin-bottom: 30px;
+  }
+}
+
+.support-page-content {
+  padding: 50px 0px;
+}
+
+.support-page-content, .support-page-content-2-col {
+  min-height: 300px;
+
+  p {
+    font-size: 1em;
+  }
+}
+
+// ============ Sidebar CSS ============== //
+
+#sidebar .widget-area {
+
+  ul li ul li {
+    font-size: .9em;
+    line-height: 1.75em;
+    font-weight: 400;
+  }
+
+  .widget-container {
+    margin: 0px 0px 20px 0px;
+
+    h3.widget-title {
+      font-size: .9em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+  }
+}
+
+.support-page-search-container {
+  background: rgba($secondary,.4);
+  padding: 20px 0px;
+
+  #searchform {
+    width: 100%;
+    position: relative;
+
+    label.screen-reader-text {
+      display: none;
+    }
+
+    input[type='text'] {
+      display: block;
+      width: 100%;
+      padding: 10px 20px;
+      font-size: 1em;
+      font-family: $primary-font;
+    }
+
+    button[type="submit"] {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      border: none;
+      font-size: 1em;
+      color: $main;
+    }
+  }
+}
+// Additional Resources Elements
+
+.additional-resource-header {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: $main;
+  margin-bottom: 0px;
+  background-size: cover;
+  padding: 0px 30px 0px 30px;
+
+  @include min-width(960px) {
+    margin-bottom: 90px;
+  }
+
+  @include min-width(960px) {
+    padding: 0px 30px 0px 30px;
+  }
+
+  .additional-resource-header-content {
+    padding: 50px 0px 50px 0px;
+
+    h1, h2 {
+      color: $white;
+      line-height: 1em;
+    }
+
+    h2 {
+      font-size: 1.2em;
+      line-height: 1.5em;
+    }
+
+    h2 {
+      font-weight:  400;
+      padding: 50px 0px 0px 0px;
+    }
+
+    h1 {
+      padding: 0px 0px 50px 0px;
+    }
+
+    h1.entry-title {
+      color: $white;
+      font-size: 3.43em;
+      line-height: 1em;
+    }
+
+    h4 {
+      font-size: 1em;
+      color: $white;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+  }
+}
+
+.lkm-row .add-resource-content {
+  padding: 0px 30px 85px 30px;
+  width: 100%;
+
+  @include min-width(960px) {
+    width: 75%;
+    padding: 0px 30px 85px 85px;
+  }
+
+  @include min-width(1224px) {
+    padding: 0px 0px 85px 85px;
+  }
+}
+
+// Additional Resources Sidebar menu
+.lkm-row .add-resource-menu-sidebar.open-menu {
+
+  .nav-case {
+    background: rgba($secondary,.1);
+    padding: 20px 30px;
+
+    @include min-width(1224px) {
+      padding: 0px 0px 85px 85px;
+    }
+  }
+
+  .mobile-sidebar-trigger {
+    h4 {
+      &::after {
+        content: '\f146';
+      }
+    }
+  }
+
+  .menu-additional-resources-container {
+    display: block;
+    padding-right: 0px;
+
+    ul#menu-additional-resources {
+
+      li {
+        height: 20px;
+        overflow: hidden;
+        margin: 10px 0px;
+      }
+    }
+  }
+}
+
+.lkm-row .add-resource-menu-sidebar {
+  padding: 30px 30px;
+  background: rgba($secondary, .2);
+  width: 100%;
+  margin-bottom: 50px;
+
+  @include min-width(960px) {
+    width: 25%;
+    background: none;
+    padding: 0px 0px 0px 30px;
+    margin-bottom: 0px;
+  }
+
+  @include min-width(1224px) {
+    padding: 0px 0px 0px 0px;
+  }
+
+  .mobile-sidebar-trigger {
+    background: $secondary;
+    color: $white;
+    display: block;
+    cursor: pointer;
+
+    @include min-width(960px) {
+      display:none;
+    }
+
+    h4 {
+      font-size: 1em;
+      color: $white;
+      text-transform: uppercase;
+      text-align: left;
+      display: block;
+      padding: 20px 20px;
+
+      @include min-width(330px) {
+        font-size: 1.25em;
+      }
+
+      &::after {
+        font-family: 'Font Awesome 5 Pro';
+        font-weight: 400;
+        font-size: .9em;
+        display: inline-block;
+        width: auto;
+        height: auto;
+        content: '\f0fe';
+        float: right;
+      }
+    }
+  }
+
+
+
+  .menu-additional-resources-container {
+    display: block;
+    padding-right: 0px;
+
+    ul#menu-additional-resources {
+
+      li {
+        display: block;
+        font-size: 1.125em;
+        font-weight: 700;
+        @include clearfix;
+        opacity: .6;
+        @include transition;
+        height: 0px;
+        overflow: hidden;
+        -webkit-transition:height 300ms ease;
+        -moz-transition:height 300ms ease;
+        -o-transition:height 300ms ease;
+        transition:height 300ms ease;
+
+        &::after {
+          font-family: 'Font Awesome 5 Pro';
+          font-weight: 700;
+          content: '\f105';
+          width: 1.5em;
+          float: right;
+          color: $main;
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    @include min-width(960px) {
+
+      ul#menu-additional-resources {
+        @include clearfix;
+        background: none;
+
+        li {
+          height: 20px;
+          margin-bottom: 1em;
+        }
+
+        li.current-menu-item {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+
+// Additional resources sidebar menu

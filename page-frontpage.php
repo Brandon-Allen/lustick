@@ -107,7 +107,7 @@ get_header(); ?>
           <div class="item">
             <div class="owl-container">
               <div class="icon-container"><img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" /></div>
-              <h3><?php echo $title; ?></h3>
+              <h3><a class="practice-link" href="<?php echo $linkP; ?>"><?php echo $title; ?></a></h3>
               <a href="<?php echo $linkP; ?>">LEARN MORE</a>
             </div>
           </div>
@@ -167,13 +167,14 @@ get_header(); ?>
 <!-- ===================== LOGOS ==================== -->
 
   <div class="lkm-slab logos">
-      <div class="content-container lkm-row">
+      <div class="content-container lkm-row logo-content-container">
         <?php if( have_rows('logo_repeater')): ?>
           <?php while( have_rows('logo_repeater')): the_row();
             $logo = get_sub_field('logo_image');
+            $logoLink = get_sub_field('logo_links');
           ?>
-        <div class="lkm-column one-fourth logo-container">
-          <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" />
+        <div class="one-fourth logo-container">
+          <a href="<?php echo $logoLink ?>" target="_blank"><img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" /></a>
         </div>
       <?php endwhile; ?>
     <?php endif; ?>
@@ -191,8 +192,8 @@ get_header(); ?>
     navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
     loop: true,
     autoplay:true,
-    autoplayTimeout:5000,
-    smartSpeed: 500,
+    autoplayTimeout:3000,
+    smartSpeed: 700,
     autoplayHoverPause:true,
     responsive:{
         0:{

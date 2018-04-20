@@ -14,9 +14,52 @@
 
   <div class="lkm-slab practice-header">
     <div class="content-container lkm-row">
+      <div class="lkm-column two-thirds practice-hero">
+        <?php if(get_field('hero_type') == 'image'): ?>
+          <?php if(get_field('hero_image')):
+              $image = get_field('hero_image');
+          ?>
+              <img src="<?php echo $image['url'];  ?>" alt="<?php echo $image['alt']; ?>">
+            <?php endif; ?>
+          <?php else: ?>
+            <?php if(get_field('hero_video')): ?>
+              <div class="embed-container">
+                <?php
+                  $iframe = get_field('hero_video');
+
+                  preg_match('/src="(.+?)"/', $iframe, $matches);
+                  $src = $matches[1];
+
+                  $params = array(
+                      'controls'    => 1,
+                      'rel' => 0,
+                      'hd'        => 1,
+                      'autohide'    => 1
+                  );
+
+                  $new_src = add_query_arg($params, $src);
+
+                  $iframe = str_replace($src, $new_src, $iframe);
+
+
+                  // add extra attributes to iframe html
+                  $attributes = 'frameborder="0"';
+
+                  $iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
+
+
+                  // echo $iframe
+                  echo $iframe;
+                ?>
+              </div>
+            <?php endif; ?>
+        <?php endif; ?>
+      </div><!-- Video/Image Field End -->
+
       <div class="lkm-column one-third practice-hero-content">
         <h1><?php the_field('practice_title'); ?></h1>
         <h3>Our Team of Attorneys</h3>
+        <div class="attorney-cotent-container">
         <?php if(have_rows('practice_attorneys')): ?>
           <?php while(have_rows('practice_attorneys')): the_row();
               $image = get_sub_field('attorney_image');
@@ -37,23 +80,8 @@
           </a>
           <?php endwhile; ?>
           <?php endif; ?>
-      </div>
-
-      <div class="lkm-column two-thirds practice-hero">
-        <?php if(get_field('hero_type') == 'image'): ?>
-          <?php if(get_field('hero_image')):
-              $image = get_field('hero_image');
-          ?>
-              <img src="<?php echo $image['url'];  ?>" alt="<?php echo $image['alt']; ?>">
-            <?php endif; ?>
-          <?php else: ?>
-            <?php if(get_field('hero_video')): ?>
-              <div class="embed-container">
-                <?php the_field('hero_video'); ?>
-              </div>
-            <?php endif; ?>
-        <?php endif; ?>
-      </div>
+          </div>
+      </div><!-- Practice Content End -->
     </div>
   </div>
 
@@ -128,14 +156,8 @@
       <?php endif; ?>
       </div>
 
-      <div class="lkm-column two-thirds form-container sub-footer-form">
-        <h3>Free Consultation</h3>
-        <p><strong>READY TO TALK ABOUT YOUR CASE?</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-        <?php
-          gravity_form( 1, $display_title = false, $display_description = false, $display_inactive = false, $field_values = null, $ajax = false, $tabindex, $echo = true );
-        ?>
-        <div class="bg-color-slab"></div>
-      </div>
+      <!-- Consultation form include -->
+      <?php include '_includes/consultation-form.php' ?>
     </div>
   </div>
 

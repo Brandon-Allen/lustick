@@ -19,8 +19,29 @@ $( document ).ready(function() {
         return;
     }
     $('.open-transcript').removeClass('open-transcript');
-    var newTrans = $( ".transcript-container", $(this).parent() );
     newTrans.addClass('open-transcript');
   });
-  
+
+  $( ".mobile-sidebar-trigger" ).click(function() {
+
+    var mobileBtn = $($(this).parent() );
+    if (mobileBtn.hasClass('open-menu')) {
+      $('.open-menu').removeClass('open-menu');
+        return;
+    }
+    $('.open-menu').removeClass('open-menu');
+    mobileBtn.addClass('open-menu');
+  });
+
+  $( ".search-form-trigger" ).click(function() {
+
+    var mobileBtn = $('.search-container');
+    if (mobileBtn.hasClass('open-form')) {
+      $('.open-form').removeClass('open-form');
+        return;
+    }
+    $('.open-form').removeClass('open-form');
+    mobileBtn.addClass('open-form');
+  });
+
 });

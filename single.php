@@ -10,17 +10,23 @@
 
   <div class="lkm-slab">
     <div class="content-container lkm-row single-post-container">
-      <div class="lkm-column one-fourth">
-        This is the sidebar menu
+      <div class="lkm-column one-fourth add-resource-menu-sidebar">
+        <div class="mobile-sidebar-trigger">
+          <h4>Additional Resources</h4>
+        </div>
+        <div class="nav-case">
+          <?php wp_nav_menu( array( 'theme_location' => 'additional-resources-menu' ) ); ?>
+        </div>
       </div>
+
       <div class="lkm-column three-fourths">
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <?php get_template_part( 'entry' ); ?>
         <?php if ( ! post_password_required() ) comments_template( '', true ); ?>
         <?php endwhile; endif; ?>
-        <footer class="footer">
+        <div class="footer-post">
           <?php get_template_part( 'nav', 'below-single' ); ?>
-        </footer>
+        </div>
       </div>
     </div>
   </div>

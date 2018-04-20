@@ -13,6 +13,17 @@
 
   <div class="lkm-slab single-header">
     <div class="content-container lkm-row">
+      <div class="lkm-column two-thirds single-hero">
+        <?php
+          $image = get_field('member_hero_image');
+          $size = 'full'; // (thumbnail, medium, large, full or custom size)
+
+          if( $image ) {
+          	echo wp_get_attachment_image( $image, $size );
+          }
+        ?>
+      </div>
+
       <div class="lkm-column one-third single-hero-content">
         <div class="name-title-container">
           <h1><?php the_field('team_member_name'); ?></h1>
@@ -28,31 +39,21 @@
           </ul>
         </div>
       </div>
-
-      <div class="lkm-column two-thirds single-hero">
-        <?php
-          $image = get_field('member_hero_image');
-          $size = 'full'; // (thumbnail, medium, large, full or custom size)
-
-          if( $image ) {
-          	echo wp_get_attachment_image( $image, $size );
-          }
-        ?>
-      </div>
     </div>
   </div>
 
   <div class="lkm-slab">
-    <div class="content-container lkm-row">
-      <div class="lkm-column one-third">
+    <div id="equalHeight" class="content-container lkm-row">
+      <div class="lkm-column one-third sidebar-column">
         <div class="practice-areas">
           <h4><i class="far fa-gavel"></i>PRACTICE AREAS</h4>
           <?php if(have_rows('practice_areas')): ?>
           <ul>
             <?php while(have_rows('practice_areas')): the_row();
               $area = get_sub_field('area');
+              $areaLink = get_sub_field('practice_area_link')
             ?>
-            <li><?php echo $area; ?></li>
+            <li><a href="<?php echo $areaLink; ?>"><?php echo $area; ?></a></li>
           <?php endwhile; ?>
           </ul>
         <?php endif; ?>
@@ -95,7 +96,7 @@
         </div>
       </div>
 
-      <div class="lkm-column two-thirds">
+      <div class="lkm-column two-thirds content-column">
         <div class="profile-content">
           <?php the_field( 'bio' ) ?>
         </div>
@@ -155,16 +156,18 @@
       <?php endif; ?>
       </div>
 
-
-      <div class="lkm-column two-thirds form-container sub-footer-form">
-        <h3>Free Consultation</h3>
-        <p><strong>READY TO TALK ABOUT YOUR CASE?</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-        <?php
-          gravity_form( 1, $display_title = false, $display_description = false, $display_inactive = false, $field_values = null, $ajax = false, $tabindex, $echo = true );
-        ?>
-        <div class="bg-color-slab"></div>
-      </div>
+      <!-- Consultation form include -->
+      <?php include '_includes/consultation-form.php' ?>
     </div>
   </div>
 </section>
+
+<script src="<?php bloginfo('template_directory'); ?>/_js/jquery.matchHeight.js" charset="utf-8"></script>
+<script type="text/javascript">
+  var $ = jQuery;
+  $(function() {
+    $('#equalHeight > .lkm-column').matchHeight();
+  });
+</script>
+
 <?php get_footer(); ?>

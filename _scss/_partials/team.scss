@@ -131,8 +131,8 @@
 
       h3 {
         font-size: 1.6em;
-        line-height: 1.5em;
-        margin: 0px 0px 0px 0px;
+        line-height: 1.1em;
+        margin: 0px 0px 5px 0px;
       }
 
       p {
@@ -159,10 +159,16 @@
 .single-header {
   background: rgba($secondary,.2);
   border-top: 10px solid $main;
+  @include clearfix;
 
   .single-hero-content {
     padding: 30px 30px 0px 30px;
+    float:none;
     @include clearfix;
+
+    @include min-width(770px) {
+      float:right;
+    }
 
     @include min-width(900px) {
       padding: 50px 0px 70px 30px;
@@ -261,6 +267,11 @@
     height: 100%;
     display: block;
     overflow: hidden;
+    float: none;
+
+    @include min-width(770px) {
+      float: right;
+    }
 
     img {
       display: block;
@@ -280,9 +291,12 @@
   overflow: hidden;
 }
 
+.practice-areas ul li {
+  line-height: 1.75em;
+}
+
 .practice-areas, .education, .honors {
   padding: 40px 30px 30px 30px;
-  border-right: 1px solid rgba($dark,.2);
   position: relative;
 
   @include min-width(1224px) {

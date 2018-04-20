@@ -1,33 +1,8 @@
 // In the News CSS
 .news {
-
-  h1, h2 {
-    color: $white;
-    line-height: 1em;
-  }
-
-  h2 {
-    font-size: 1.2em;
-    line-height: 1.5em;
-  }
-
-  h2 {
-    font-weight:  400;
-    padding: 50px 0px 0px 0px;
-  }
-
-  h1 {
-    padding: 0px 0px 50px 0px;
-  }
 }
 
 .news-landing {
-  margin: 0px 0px 85px 0px;
-  padding: 0px 0px 85px 0px;
-
-  .three-fourths {
-    padding-left: 85px;
-  }
 
   .intro-container {
     border-bottom: 1px solid rgba($dark, .2);
@@ -40,7 +15,11 @@
   }
 
   .news-feature-img {
-    padding-right: 25px;
+    padding-left: 0px;
+
+    @include min-width(770px) {
+      padding-right: 25px;
+    }
 
     img {
       display: block;
@@ -50,7 +29,17 @@
   }
 
   .news-content-container {
-    padding-left: 25px;
+    padding: 30px;
+    background: rgba($secondary,.1);
+
+    @include min-width(770px) {
+      padding: 0px 25px 0px 0px;
+      background: none;
+    }
+
+    @include min-width(960px) {
+      padding: 0px 25px 0px 0px;
+    }
 
     h3 {
       font-size: 1.25em;

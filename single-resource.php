@@ -4,22 +4,19 @@
 
 <section id="content" role="main">
 
-  <div class="lkm-slab resource-nav">
+  <div class="lkm-slab resource-single-header">
     <div class="content-container lkm-row">
-      <div class="lkm-column three-fourths nav-text-content">
+      <div class="lkm-column whole">
         <?php
           $postType = get_post_type_object(get_post_type());
           if ($postType) {
             ?>
-           <h4><?php echo esc_html($postType->labels->name); ?></h4>
+           <h2><?php echo esc_html($postType->labels->name); ?></h2>
         <?php  } ?>
         <?php
           $term = get_field('resource_category');
         ?>
         <h1 class="entry-title"><?php echo get_cat_name($term); ?></h1>
-      </div>
-      <div class="lkm-column one-fourth nav-container">
-        <!-- <?php wp_nav_menu( array( 'theme_location' => 'resource-menu' ) ); ?> -->
       </div>
     </div>
   </div>
@@ -30,7 +27,15 @@
   <div class="lkm-slab resource-content-container<?php if (get_field('resource_type')) echo ' ' . $resource_type_class; ?>">
     <div class="content-container lkm-row">
       <div class="lkm-column one-fourth">
-        <?php get_template_part( '_includes/sidemenu-education'); ?>
+        <div class="desktop-resource-nav">
+          <?php get_template_part( '_includes/sidemenu-education'); ?>
+        </div>
+        <div class="mobile-resource-nav">
+          <div class="mobile-sidebar-trigger"><h4>Select a Resource</h4></div>
+          <div class="nav-case">
+            <?php get_template_part( '_includes/sidemenu-education'); ?>
+          </div>
+        </div>
       </div>
       <div class="lkm-column three-fourths resource-post">
       <h2 class='article-title'><?php the_title(); ?></h2>

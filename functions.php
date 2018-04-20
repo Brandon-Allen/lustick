@@ -101,11 +101,11 @@ function lkm_team_member() {
     $args = array(
         'labels' => $labels,
         'public' => true,
-        'has_archive' => true,
+        'has_archive' => false,
         'show_ui' => true,
         'capability_type' => 'post',
         'hierarchical' => false,
-        'rewrite' => array('slug' => 'team-member'),
+        'rewrite' => array('slug' => 'team'),
         'query_var' => true,
         'menu_icon' => 'dashicons-businessman',
         'taxonomies'  => array( 'category' ),
@@ -148,7 +148,7 @@ function lkm_practices_init() {
   $args = array(
       'labels' => $labels,
       'public' => true,
-      'has_archive' => true,
+      'has_archive' => false,
       'show_ui' => true,
       'capability_type' => 'post',
       'hierarchical' => false,
